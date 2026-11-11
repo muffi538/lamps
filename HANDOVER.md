@@ -15,33 +15,33 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 
 | | |
 |---|---|
-| Pages | Home, Shop (all 20 SKUs, filter + sort), 2 collection pages, **20 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
+| Pages | Home, Shop (all 8 SKUs, filter + sort), 1 collection page, **8 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
 | Product data | Extracted from your PDF catalogue into a typed, central data structure (`src/lib/catalog/`) |
-| Imagery | **85 product images + 8 editorial images**, one folder per product, gallery built automatically from the folder |
+| Imagery | **36 product images + 6 editorial images**, one folder per product, gallery built automatically from the folder |
 | Commerce | Add to cart, quick add, remove, quantity controls, cart drawer, subtotal, persistent bag, checkout hand-off |
 | Shopify | Storefront API client, queries, normaliser and checkout action written and wired — dormant until credentials are set |
-| Build | 37 statically prerendered routes, ~103 kB shared JS, zero console errors |
+| Build | 24 statically prerendered routes, ~103 kB shared JS, zero console errors |
 
 ### Collections
 
 | Collection | SKUs | Route |
 |---|---|---|
-| Diffusers | 10 | `/collections/diffusers` |
-| Living & Desk | 10 | `/collections/living` |
+| Diffusers | 8 | `/collections/diffusers` |
 
-> **Lamps has been removed at your request.** The catalogue contained exactly
-> one dedicated lamp (the Floating Wireless Charging Lamp, PDF p.5); that
-> product, its images and the Lamps collection, navigation entry and collection
-> page are all gone, and the brand copy was rewritten so the store reads as a
-> diffuser brand rather than a lighting one. The Anti Gravity Diffuser and
-> Candlelight Style Electric Diffuser, which were previously in both
-> collections, are now Diffusers only. Everything is recoverable from git
-> history if you change your mind.
+> **The store is now diffusers only, at your request.** Removed along the way:
+> the **Lamps** collection and the Floating Wireless Charging Lamp (PDF p.5);
+> the **Flame Diffuser** (p.14); the **Flame Aromatherapy Diffuser** (p.2); the
+> **Charcoal Diffuser** (p.10); and the whole **Living & Desk** collection —
+> ten SKUs covering the wireless chargers, wooden clocks, laptop stand,
+> cleaning kit and neck massager.
 >
-> Ten SKUs are not diffusers (chargers, clocks, a laptop stand, a cleaning kit,
-> a neck massager). They sit in **Living & Desk**, reachable from `/shop` and
-> the footer but deliberately kept out of the main navigation. Delete
-> `src/lib/catalog/living.ts` and its import in `index.ts` to remove them too.
+> That takes the catalogue from the 22 SKUs in the supplied PDF down to 8.
+> Every deletion is in git history, so any of them can be restored.
+>
+> With one collection left, `/collections/diffusers` now shows the same
+> products as `/shop`. That is harmless, and the Diffusers nav entry is worth
+> keeping as the brand's category, but you may prefer to point the nav straight
+> at `/shop` if the duplication bothers you.
 
 ### Adding a product later
 
@@ -61,7 +61,7 @@ wrong product. Full detail in [`README.md`](./README.md#product-imagery).
 
 ---
 
-## 2. Complete SKU list — 20 products, 24 variants
+## 2. Complete SKU list — 8 products, 12 variants
 
 SKU codes are **provisional**, generated for this build. Replace them with your
 real article numbers in `src/lib/catalog/*.ts`, then use the same codes in
@@ -69,26 +69,14 @@ Shopify so the two systems line up.
 
 | # | SKU | Product | Type | Collection | Variants | PDF page | Images |
 |---|---|---|---|---|---|---|---|
-| 1 | `JL-DIF-FLAME-LANTERN` | [Flame Aromatherapy Diffuser](/products/flame-aromatherapy-diffuser) | Aroma Diffuser | Diffusers | single | 2 | 9 |
-| 2 | `JL-DIF-JELLYFISH` | [Jellyfish Aroma Diffuser](/products/jellyfish-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 2 |
-| 3 | `JL-DIF-ANTIGRAV` | [Anti Gravity Diffuser](/products/anti-gravity-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 4 |
-| 4 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak | 7 | 4 |
-| 5 | `JL-DIF-CHARCOAL` | [Charcoal Diffuser](/products/charcoal-diffuser) | Aroma Diffuser | Diffusers | single | 10 | 4 |
-| 6 | `JL-DIF-RAIN` | [Rain Aroma Diffuser](/products/rain-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 11 | 4 |
-| 7 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
-| 8 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
-| 9 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
-| 10 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
-| 11 | `JL-CHG-CIRCUITRA` | [Circuitra Rotating Charging Dock](/products/circuitra-rotating-charging-dock) | Living & Desk | Living & Desk | single | 4 | 2 |
-| 12 | `JL-CHG-ROT3` | [Auto-Rotating 3-in-1 Wireless Charger](/products/auto-rotating-3in1-charger) | Living & Desk | Living & Desk | single | 4 | 4 |
-| 13 | `JL-CHG-5IN1` | [5-in-1 Foldable Wireless Charger with Speaker and Clock](/products/foldable-5in1-charger-speaker-clock) | Living & Desk | Living & Desk | single | 8 | 1 |
-| 14 | `JL-CHG-3IN1` | [3-in-1 Wireless Charger](/products/3in1-wireless-charger) | Living & Desk | Living & Desk | single | 8 | 1 |
-| 15 | `JL-CHG-TRUCK` | [Multi-Function Wireless Charging Dock](/products/multi-function-charging-dock) | Living & Desk | Living & Desk | single | 9 | 1 |
-| 16 | `JL-CLK-WOOD-PEN` | [Wooden Alarm Clock with Pen Holder](/products/wooden-alarm-clock-pen-holder) | Living & Desk | Living & Desk | single | 6 | 4 |
-| 17 | `JL-CLK-WOOD` | [Wooden Digital Alarm Clock](/products/wooden-digital-alarm-clock) | Living & Desk | Living & Desk | single | 6 | 1 |
-| 18 | `JL-DSK-STAND` | [Adjustable Laptop Stand](/products/adjustable-laptop-stand) | Living & Desk | Living & Desk | single | 12 | 4 |
-| 19 | `JL-DSK-CLEAN20` | [20-in-1 Multipurpose Cleaning Kit](/products/20in1-cleaning-kit) | Living & Desk | Living & Desk | single | 17 | 4 |
-| 20 | `JL-WEL-NECKPILLOW` | [Neck Pillow Massager](/products/neck-pillow-massager) | Living & Desk | Living & Desk | single | 18 | 4 |
+| 1 | `JL-DIF-JELLYFISH` | [Jellyfish Aroma Diffuser](/products/jellyfish-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 2 |
+| 2 | `JL-DIF-ANTIGRAV` | [Anti Gravity Diffuser](/products/anti-gravity-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 4 |
+| 3 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak | 7 | 4 |
+| 4 | `JL-DIF-RAIN` | [Rain Aroma Diffuser](/products/rain-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 11 | 4 |
+| 5 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
+| 6 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
+| 7 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
+| 8 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
 
 Three products carry genuine colour variants taken from the catalogue
 photography: **Wood Grain Aroma Diffuser** (Walnut / Oak), **Bird Diffuser**
@@ -101,7 +89,7 @@ variant swaps the gallery image. No other product was given invented variants.
 
 The storefront never invents a specification. Where the catalogue is silent the
 product page prints a dashed **“To be confirmed”** chip, which is honest to the
-customer and visible to you. There are **268 such fields across the 20 SKUs**.
+customer and visible to you. There are **124 such fields across the 8 SKUs**.
 
 ### Needed for every product (the fastest wins)
 
@@ -109,34 +97,18 @@ customer and visible to you. There are **268 such fields across the 20 SKUs**.
    *“Price on request”*. Set `price:` on the product and on each variant in
    `src/lib/catalog/*.ts` and the whole store — cards, product pages, cart
    subtotal, structured data — turns on at once.
-2. **Dimensions and net weight** — missing for 19 of 20 SKUs. Only the 20-in-1
-   Cleaning Kit publishes measurements (89 mm × 57 mm).
+2. **Dimensions and net weight** — missing for all 8 SKUs. The only product in the
+   supplied PDF with published measurements, the 20-in-1 Cleaning Kit, is no
+   longer in the catalogue.
 3. **Tank capacity, mist output, run time and timer settings** — missing for
    every diffuser and humidifier. These are the questions customers ask first.
 4. **Power source, input voltage and rated power** — missing across the range.
 5. **Model / article number, country of origin and warranty** — missing for all
-   20 SKUs.
-6. **Full pack contents** — only three products (Flame Aromatherapy Diffuser,
-   Raindrop Aroma Diffuser, Adjustable Laptop Stand) state what is in the box.
+   8 SKUs.
+6. **Full pack contents** — only the Raindrop Aroma Diffuser states what is in
+   the box.
 
 ### Per-product detail
-
-### Flame Aromatherapy Diffuser  <sub>(PDF p.2 · `JL-DIF-FLAME-LANTERN`)</sub>
-
-- Tank capacity
-- Mist output
-- Run time
-- Input voltage
-- Rated power
-- Noise level
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Diameter
-- Net weight
-- Packed dimensions
-- Finish
 
 ### Jellyfish Aroma Diffuser  <sub>(PDF p.3 · `JL-DIF-JELLYFISH`)</sub>
 
@@ -193,26 +165,6 @@ customer and visible to you. There are **268 such fields across the 20 SKUs**.
 - Net weight
 - Packed dimensions
 - Substrate
-- Full pack contents
-
-### Charcoal Diffuser  <sub>(PDF p.10 · `JL-DIF-CHARCOAL`)</sub>
-
-- Tank capacity
-- Mist output
-- Run time
-- Timer settings
-- Controls
-- Power source
-- Input voltage
-- Rated power
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Diameter
-- Net weight
-- Packed dimensions
-- Finish
 - Full pack contents
 
 ### Rain Aroma Diffuser  <sub>(PDF p.11 · `JL-DIF-RAIN`)</sub>
@@ -306,149 +258,6 @@ customer and visible to you. There are **268 such fields across the 20 SKUs**.
 - Net weight
 - Finish
 
-### Circuitra Rotating Charging Dock  <sub>(PDF p.4 · `JL-CHG-CIRCUITRA`)</sub>
-
-- Charging output
-- Input
-- Alarm function
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Finish
-- Full pack contents
-
-### Auto-Rotating 3-in-1 Wireless Charger  <sub>(PDF p.4 · `JL-CHG-ROT3`)</sub>
-
-- Charging output
-- Input
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Finish
-- Full pack contents
-
-### 5-in-1 Foldable Wireless Charger with Speaker and Clock  <sub>(PDF p.8 · `JL-CHG-5IN1`)</sub>
-
-- Bluetooth version
-- Speaker output
-- Input
-- Battery
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Finish
-- Full pack contents
-
-### 3-in-1 Wireless Charger  <sub>(PDF p.8 · `JL-CHG-3IN1`)</sub>
-
-- Input
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Finish
-- Full pack contents
-
-### Multi-Function Wireless Charging Dock  <sub>(PDF p.9 · `JL-CHG-TRUCK`)</sub>
-
-- Input
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Finish
-- Full pack contents
-
-### Wooden Alarm Clock with Pen Holder  <sub>(PDF p.6 · `JL-CLK-WOOD-PEN`)</sub>
-
-- Alarm function
-- Temperature display
-- Power source
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Substrate
-- Full pack contents
-
-### Wooden Digital Alarm Clock  <sub>(PDF p.6 · `JL-CLK-WOOD`)</sub>
-
-- Power source
-- Battery backup
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Substrate
-- Full pack contents
-
-### Adjustable Laptop Stand  <sub>(PDF p.12 · `JL-DSK-STAND`)</sub>
-
-- Material
-- Maximum laptop size
-- Load capacity
-- Model / article number
-- Country of origin
-- Warranty
-- Folded dimensions
-- Open dimensions
-- Net weight
-- Height range
-- Material
-
-### 20-in-1 Multipurpose Cleaning Kit  <sub>(PDF p.17 · `JL-DSK-CLEAN20`)</sub>
-
-- Cleaning fluid supplied
-- Model / article number
-- Country of origin
-- Warranty
-- Net weight
-- Packed dimensions
-- Material
-- Full pack contents
-
-### Neck Pillow Massager  <sub>(PDF p.18 · `JL-WEL-NECKPILLOW`)</sub>
-
-- Massage modes
-- Heat function
-- Battery capacity
-- Run time
-- Charging method
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
-- Fill
-- Cover removable
-- Full pack contents
-
 ### Two things to check before launch
 
 - **Neck Pillow Massager (p.18).** The icon strip at the foot of that catalogue
@@ -490,10 +299,10 @@ Full step-by-step instructions are in **[`SHOPIFY.md`](./SHOPIFY.md)**. In short
    `unauthenticated_read_product_tags`,
    `unauthenticated_write_checkouts`,
    `unauthenticated_read_checkouts`.
-3. **20 products created in Shopify** with handles matching the `handle` field
+3. **8 products created in Shopify** with handles matching the `handle` field
    in the catalogue files, variants matching the options above, and tags
    `diffusers` / `living` to drive collection membership.
-4. **Two Shopify collections** with handles `diffusers` and `living`.
+4. **One Shopify collection** with the handle `diffusers`.
 5. **Metafields** (namespace `custom`) if you want the editorial sections —
    features, specifications, usage, care — managed in Shopify rather than in
    code. Definitions are listed in `SHOPIFY.md`.

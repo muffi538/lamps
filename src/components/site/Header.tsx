@@ -175,10 +175,7 @@ export function Header() {
               </ul>
 
               <div className="mt-auto border-t border-line px-5 py-6">
-                <Link href="/collections/living" className="t-meta link-underline">
-                  Living &amp; Desk
-                </Link>
-                <p className="t-meta mt-4">{site.contact.email}</p>
+                <p className="t-meta">{site.contact.email}</p>
                 <p className="t-meta">{site.contact.phone}</p>
               </div>
             </motion.nav>

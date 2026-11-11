@@ -91,7 +91,7 @@ export default async function ProductPage({ params }: Params) {
             <li aria-hidden="true">/</li>
             <li>
               <Link href={`/collections/${product.collections[0]}`} className="transition-colors hover:text-ink">
-                {product.collections[0] === 'living' ? 'Living & Desk' : product.collections[0]}
+                {product.collections[0]}
               </Link>
             </li>
             <li aria-hidden="true">/</li>

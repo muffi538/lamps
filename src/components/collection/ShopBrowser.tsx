@@ -52,7 +52,7 @@ export function ShopBrowser({
     return sorted;
   }, [products, collection, types, sort]);
 
-  const labels: Record<string, string> = { diffusers: 'Diffusers', living: 'Living & Desk' };
+  const labels: Record<string, string> = { diffusers: 'Diffusers' };
   const hasFilters = collection !== 'all' || types.length > 0;
 
   return (

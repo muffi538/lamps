@@ -9,7 +9,6 @@ const columns = [
     links: [
       { label: 'All products', href: '/shop' },
       { label: 'Diffusers', href: '/collections/diffusers' },
-      { label: 'Living & Desk', href: '/collections/living' },
     ],
   },
   {

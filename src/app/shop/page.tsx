@@ -6,7 +6,7 @@ import { getProducts } from '@/lib/commerce';
 export const metadata: Metadata = {
   title: 'Shop all',
   description:
-    'The complete collection — sculptural table lighting, aroma diffusers and considered objects for everyday living.',
+    'The complete collection — aroma diffusers and humidifiers for the considered home.',
   alternates: { canonical: '/shop' },
 };
 

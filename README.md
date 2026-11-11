@@ -52,7 +52,7 @@ src/
     layout.tsx                fonts, metadata, header, footer, cart provider
     page.tsx                  homepage
     shop/                     all products with filter + sort
-    collections/[handle]/     diffusers · living
+    collections/[handle]/     diffusers
     products/[handle]/        one page per SKU, statically generated
     our-story/  contact/  search/  policies/[slug]/
     actions/checkout.ts       server action → Shopify hosted checkout
@@ -69,7 +69,7 @@ src/
     ui/        Container, Reveal, Price
 
   lib/
-    catalog/   ← the product data: types, diffusers, living, collections
+    catalog/   ← the product data: types, diffusers, collections
                images.ts resolves each product's gallery from its own folder
                product-images.generated.ts is generated — do not edit
     shopify/   client, queries, types, normalize (server-only)
