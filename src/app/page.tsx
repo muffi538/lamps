@@ -68,7 +68,7 @@ export default async function HomePage() {
 
           <div className="relative order-1 min-h-[52svh] lg:order-2 lg:col-span-7 lg:min-h-0">
             <Image
-              src="/editorial/hero.jpg"
+              src="/editorial/hero-candlelight.jpg"
               alt="The Candlelight Style Electric Diffuser lit and releasing a fine mist on a round walnut table in a warm living room"
               fill
               priority

@@ -13,14 +13,13 @@ const nextConfig = {
       ...(shopifyDomain ? [{ protocol: 'https', hostname: shopifyDomain, pathname: '/**' }] : []),
     ],
   },
-  async headers() {
-    return [
-      {
-        source: '/products/:path*',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-    ];
-  },
+  // NOTE: do not add `Cache-Control: immutable` for /products/* or /editorial/*.
+  // Those are stable filenames (main.jpg, hero.jpg) whose contents get replaced
+  // when better photography arrives. `immutable` tells browsers AND the Vercel
+  // image optimiser never to revalidate, so a replaced image keeps serving the
+  // old bytes until the max-age expires. Next's defaults revalidate via ETag,
+  // which is correct here and still cheap. Only content-hashed URLs — which
+  // Next already emits for /_next/static — may be marked immutable.
 };
 
 export default nextConfig;
