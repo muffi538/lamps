@@ -34,7 +34,12 @@ export function CollectionTile({
           className="object-cover transition-transform duration-[1200ms] ease-premium group-hover:scale-[1.035]"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/5 to-transparent opacity-80 transition-opacity duration-700 group-hover:opacity-95"
+          className={cn(
+            'absolute inset-0 transition-opacity duration-700 group-hover:opacity-100',
+            wide
+              ? 'bg-gradient-to-r from-ink/70 via-ink/25 to-transparent opacity-90 md:from-ink/65 md:via-ink/20'
+              : 'bg-gradient-to-t from-ink/55 via-ink/5 to-transparent opacity-80',
+          )}
           aria-hidden="true"
         />
 

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const FEATURED_HANDLE = 'rain-aroma-diffuser';
+const FEATURED_HANDLE = 'raindrop-aroma-diffuser';
 
 export default async function HomePage() {
   const [bestsellers, collections, diffuserProducts, featured] = await Promise.all([
@@ -54,7 +54,7 @@ export default async function HomePage() {
                 lights go off and everything softens.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 animate-fade-up [animation-delay:200ms]">
-                <Link href="/shop" className="btn-primary">
+                <Link href="/collections/diffusers" className="btn-primary">
                   Shop collection
                 </Link>
                 <Link href="/our-story" className="link-underline font-ui text-[0.8125rem] tracking-wide text-muted">
@@ -113,7 +113,7 @@ export default async function HomePage() {
               eyebrow="Most requested"
               title="Bestsellers"
               action={
-                <Link href="/shop" className="link-underline inline-flex items-center gap-2 font-ui text-2xs uppercase tracking-wider2">
+                <Link href="/collections/diffusers" className="link-underline inline-flex items-center gap-2 font-ui text-2xs uppercase tracking-wider2">
                   View all <ArrowIcon className="h-3 w-3" />
                 </Link>
               }
@@ -132,8 +132,8 @@ export default async function HomePage() {
             <Reveal className="lg:col-span-6">
               <div className="media-frame aspect-[4/5] w-full">
                 <Image
-                  src="/editorial/philosophy.jpg"
-                  alt="A jellyfish aroma diffuser releasing five soft mist plumes on a styled table"
+                  src="/products/jellyfish-aroma-diffuser/01-main.jpg"
+                  alt="The Jellyfish Aroma Diffuser on a marble surface with five mist plumes rising and folding over"
                   fill
                   sizes="(min-width:1024px) 46vw, 92vw"
                   className="object-cover"
@@ -213,8 +213,8 @@ export default async function HomePage() {
               <Reveal delay={0.1} className="order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
                 <div className="media-frame aspect-[4/5] w-full">
                   <Image
-                    src="/editorial/featured.jpg"
-                    alt="The Rain Aroma Diffuser with a warm amber column and falling water threads"
+                    src="/products/raindrop-aroma-diffuser/02-lifestyle-table.jpg"
+                    alt="The Raindrop Aroma Diffuser lit warmly on a wooden table"
                     fill
                     sizes="(min-width:1024px) 48vw, 92vw"
                     className="object-cover"

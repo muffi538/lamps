@@ -13,6 +13,13 @@ const nextConfig = {
       ...(shopifyDomain ? [{ protocol: 'https', hostname: shopifyDomain, pathname: '/**' }] : []),
     ],
   },
+  async redirects() {
+    // With a single collection, /shop and /collections/diffusers listed the
+    // same products. /shop is gone from the navigation; this keeps any
+    // existing link to it working and gives the listing one canonical URL.
+    return [{ source: '/shop', destination: '/collections/diffusers', permanent: true }];
+  },
+
   // NOTE: do not add `Cache-Control: immutable` for /products/* or /editorial/*.
   // Those are stable filenames (main.jpg, hero.jpg) whose contents get replaced
   // when better photography arrives. `immutable` tells browsers AND the Vercel

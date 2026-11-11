@@ -51,8 +51,8 @@ src/
   app/
     layout.tsx                fonts, metadata, header, footer, cart provider
     page.tsx                  homepage
-    shop/                     all products with filter + sort
-    collections/[handle]/     diffusers
+    collections/[handle]/     diffusers — the single product listing
+                              (/shop permanently redirects here)
     products/[handle]/        one page per SKU, statically generated
     our-story/  contact/  search/  policies/[slug]/
     actions/checkout.ts       server action → Shopify hosted checkout

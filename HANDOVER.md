@@ -15,18 +15,18 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 
 | | |
 |---|---|
-| Pages | Home, Shop (all 8 SKUs, filter + sort), 1 collection page, **8 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
+| Pages | Home, Diffusers (all 7 SKUs, filter + sort), **7 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
 | Product data | Extracted from your PDF catalogue into a typed, central data structure (`src/lib/catalog/`) |
-| Imagery | **36 product images + 6 editorial images**, one folder per product, gallery built automatically from the folder |
+| Imagery | **33 product images + 5 editorial images**, one folder per product, gallery built automatically from the folder |
 | Commerce | Add to cart, quick add, remove, quantity controls, cart drawer, subtotal, persistent bag, checkout hand-off |
 | Shopify | Storefront API client, queries, normaliser and checkout action written and wired — dormant until credentials are set |
-| Build | 24 statically prerendered routes, ~103 kB shared JS, zero console errors |
+| Build | 22 statically prerendered routes, ~103 kB shared JS, zero console errors |
 
 ### Collections
 
 | Collection | SKUs | Route |
 |---|---|---|
-| Diffusers | 8 | `/collections/diffusers` |
+| Diffusers | 7 | `/collections/diffusers` |
 
 > **The store is now diffusers only, at your request.** Removed along the way:
 > the **Lamps** collection and the Floating Wireless Charging Lamp (PDF p.5);
@@ -35,13 +35,14 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 > ten SKUs covering the wireless chargers, wooden clocks, laptop stand,
 > cleaning kit and neck massager.
 >
-> That takes the catalogue from the 22 SKUs in the supplied PDF down to 8.
+> The **Rain Aroma Diffuser** (p.11) has since gone too, taking the catalogue
+> from the 22 SKUs in the supplied PDF down to 7.
 > Every deletion is in git history, so any of them can be restored.
 >
-> With one collection left, `/collections/diffusers` now shows the same
-> products as `/shop`. That is harmless, and the Diffusers nav entry is worth
-> keeping as the brand's category, but you may prefer to point the nav straight
-> at `/shop` if the duplication bothers you.
+> With one collection left there is no separate shop page: `/shop` now issues
+> a permanent redirect to `/collections/diffusers`, so old links keep working
+> and the listing has one canonical URL. The navigation is Home, Diffusers,
+> Our Story.
 
 ### Adding a product later
 
@@ -61,7 +62,7 @@ wrong product. Full detail in [`README.md`](./README.md#product-imagery).
 
 ---
 
-## 2. Complete SKU list — 8 products, 12 variants
+## 2. Complete SKU list — 7 products, 11 variants
 
 SKU codes are **provisional**, generated for this build. Replace them with your
 real article numbers in `src/lib/catalog/*.ts`, then use the same codes in
@@ -69,14 +70,13 @@ Shopify so the two systems line up.
 
 | # | SKU | Product | Type | Collection | Variants | PDF page | Images |
 |---|---|---|---|---|---|---|---|
-| 1 | `JL-DIF-JELLYFISH` | [Jellyfish Aroma Diffuser](/products/jellyfish-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 2 |
-| 2 | `JL-DIF-ANTIGRAV` | [Anti Gravity Diffuser](/products/anti-gravity-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 4 |
-| 3 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak | 7 | 4 |
-| 4 | `JL-DIF-RAIN` | [Rain Aroma Diffuser](/products/rain-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 11 | 4 |
-| 5 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
-| 6 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
-| 7 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
-| 8 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
+| 1 | `JL-DIF-JELLYFISH` | [Jellyfish Aroma Diffuser](/products/jellyfish-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 3 |
+| 2 | `JL-DIF-ANTIGRAV` | [Anti Gravity Diffuser](/products/anti-gravity-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 3 |
+| 3 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak | 7 | 5 |
+| 4 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
+| 5 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
+| 6 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
+| 7 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
 
 Three products carry genuine colour variants taken from the catalogue
 photography: **Wood Grain Aroma Diffuser** (Walnut / Oak), **Bird Diffuser**
@@ -89,7 +89,7 @@ variant swaps the gallery image. No other product was given invented variants.
 
 The storefront never invents a specification. Where the catalogue is silent the
 product page prints a dashed **“To be confirmed”** chip, which is honest to the
-customer and visible to you. There are **124 such fields across the 8 SKUs**.
+customer and visible to you. There are **107 such fields across the 7 SKUs**.
 
 ### Needed for every product (the fastest wins)
 
@@ -97,14 +97,14 @@ customer and visible to you. There are **124 such fields across the 8 SKUs**.
    *“Price on request”*. Set `price:` on the product and on each variant in
    `src/lib/catalog/*.ts` and the whole store — cards, product pages, cart
    subtotal, structured data — turns on at once.
-2. **Dimensions and net weight** — missing for all 8 SKUs. The only product in the
+2. **Dimensions and net weight** — missing for all 7 SKUs. The only product in the
    supplied PDF with published measurements, the 20-in-1 Cleaning Kit, is no
    longer in the catalogue.
 3. **Tank capacity, mist output, run time and timer settings** — missing for
    every diffuser and humidifier. These are the questions customers ask first.
 4. **Power source, input voltage and rated power** — missing across the range.
 5. **Model / article number, country of origin and warranty** — missing for all
-   8 SKUs.
+   7 SKUs.
 6. **Full pack contents** — only the Raindrop Aroma Diffuser states what is in
    the box.
 
@@ -154,7 +154,6 @@ customer and visible to you. There are **124 such fields across the 8 SKUs**.
 - Mist output
 - Run time
 - Light modes
-- Power source
 - Input voltage
 - Rated power
 - Model / article number
@@ -165,25 +164,6 @@ customer and visible to you. There are **124 such fields across the 8 SKUs**.
 - Net weight
 - Packed dimensions
 - Substrate
-- Full pack contents
-
-### Rain Aroma Diffuser  <sub>(PDF p.11 · `JL-DIF-RAIN`)</sub>
-
-- Tank capacity
-- Mist output
-- Run time
-- Timer settings
-- Power source
-- Input voltage
-- Rated power
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Diameter
-- Net weight
-- Packed dimensions
-- Finish
 - Full pack contents
 
 ### Candlelight Style Electric Diffuser  <sub>(PDF p.13 · `JL-DIF-CANDLE`)</sub>
@@ -299,7 +279,7 @@ Full step-by-step instructions are in **[`SHOPIFY.md`](./SHOPIFY.md)**. In short
    `unauthenticated_read_product_tags`,
    `unauthenticated_write_checkouts`,
    `unauthenticated_read_checkouts`.
-3. **8 products created in Shopify** with handles matching the `handle` field
+3. **7 products created in Shopify** with handles matching the `handle` field
    in the catalogue files, variants matching the options above, and tags
    `diffusers` / `living` to drive collection membership.
 4. **One Shopify collection** with the handle `diffusers`.

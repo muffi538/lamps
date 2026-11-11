@@ -69,7 +69,7 @@ Environment Variables*. Redeploy to apply.
 
 ## Step 3 — Create the products
 
-Create 8 products whose **handle** matches the `handle` field in
+Create 7 products whose **handle** matches the `handle` field in
 `src/lib/catalog/*.ts` exactly — that is what the product URLs are built from,
 so matching handles means no redirects and no broken links.
 
