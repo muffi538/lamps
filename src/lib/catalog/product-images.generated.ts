@@ -471,58 +471,6 @@ export const productImages: Record<string, GeneratedImage[]> = {
       "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAD/8QAJBAAAgEDAgYDAAAAAAAAAAAAAQIDAAQRBSESFBUiMVEzcdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFREBAQAAAAAAAAAAAAAAAAAAACH/2gAMAwEAAhEDEQA/ACtKmbTDJGggkBILCSJSzb+Bnenp7nTEuJE5Oy7WI+Jff1V1gtEkD2duY4zkqq44h6rF752dmIAJOdgPyhp4/9k="
     }
   ],
-  "flame-diffuser": [
-    {
-      "file": "01-main",
-      "src": "/products/flame-diffuser/01-main.jpg",
-      "role": "main",
-      "description": null,
-      "order": 1,
-      "width": 669,
-      "height": 1031,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAkEAACAQMDAwUAAAAAAAAAAAABAhEAAwQFEyEGEtEUIjFRYf/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAYEQACAwAAAAAAAAAAAAAAAAAAAgERUf/aAAwDAQACEQMRAD8ASzcvS3ba37F9rikBVYMeP0fFGemvt7puCeY7x4q2k9Lrj6imQ+SLoRCOw2oniPuimybysV3rhgxMjxRZWhKtp//Z"
-    },
-    {
-      "file": "02-lifestyle-living-room",
-      "src": "/products/flame-diffuser/02-lifestyle-living-room.jpg",
-      "role": "lifestyle",
-      "description": "living-room",
-      "order": 2,
-      "width": 296,
-      "height": 420,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAhEAACAQMDBQAAAAAAAAAAAAABAhEAAyEEBRITMVGR4f/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAWEQEBAQAAAAAAAAAAAAAAAAABADH/2gAMAwEAAhEDEQA/AA3N60LaWyqJf6jHuyQD5zTeUYqLb2uwChLPKmcGKsSDmD7+UZAyUK7f/9k="
-    },
-    {
-      "file": "03-lifestyle-shelf",
-      "src": "/products/flame-diffuser/03-lifestyle-shelf.jpg",
-      "role": "lifestyle",
-      "description": "shelf",
-      "order": 3,
-      "width": 296,
-      "height": 422,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgME/8QAIRAAAQMEAQUAAAAAAAAAAAAAAQIDEQAEBRMUIVFSsdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAGBEBAQADAAAAAAAAAAAAAAAAAQARMTL/2gAMAwEAAhEDEQA/AMK7/HbLUtPrUoEEjWRPXuaDl4NioCok0hg27Z9p0PrUWogECDFW5ivH18ooBqVler//2Q=="
-    },
-    {
-      "file": "04-lifestyle-side-table",
-      "src": "/products/flame-diffuser/04-lifestyle-side-table.jpg",
-      "role": "lifestyle",
-      "description": "side-table",
-      "order": 4,
-      "width": 296,
-      "height": 422,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABAURITESI1L/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAGBEAAgMAAAAAAAAAAAAAAAAAAEEBESH/2gAMAwEAAhEDEQA/AAtlLXJXMEEcMqbXbbK88VQTH2PgvoPX0aOLW3tZRJDCqOBoMOxSo9GNTocgUSKQvWf/2Q=="
-    },
-    {
-      "file": "05-lifestyle-bedside",
-      "src": "/products/flame-diffuser/05-lifestyle-bedside.jpg",
-      "role": "lifestyle",
-      "description": "bedside",
-      "order": 5,
-      "width": 296,
-      "height": 424,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAIRAAAgAFBAMAAAAAAAAAAAAAAQIAAwUREgQhMWEjMmL/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAGREBAAIDAAAAAAAAAAAAAAAAAQAhAhEx/9oADAMBAAIRAxEAPwA/SVedUasJU2VJChTcICL7dmNIuOI8Kpt6g8dQeNMMrhsT8qBFimygc2HJgpiboiVrs//Z"
-    }
-  ],
   "foldable-5in1-charger-speaker-clock": [
     {
       "file": "01-main",

@@ -27,7 +27,7 @@ const principles = [
   },
   {
     title: 'A short list, kept short',
-    body: 'We would rather carry twenty-one pieces we can describe properly than two hundred we cannot. New arrivals are added slowly and announced quietly.',
+    body: 'We would rather carry twenty pieces we can describe properly than two hundred we cannot. New arrivals are added slowly and announced quietly.',
   },
 ];
 
@@ -72,7 +72,7 @@ export default function OurStoryPage() {
                 them, not renders waiting on a minimum order.
               </p>
               <p>
-                What we do add is editing. Of everything available we carry twenty-one pieces, and
+                What we do add is editing. Of everything available we carry twenty pieces, and
                 each one earned its place by being good at a single thing — warmth, quiet, scent,
                 or the small theatre of watching mist move.
               </p>

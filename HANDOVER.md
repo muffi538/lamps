@@ -15,18 +15,18 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 
 | | |
 |---|---|
-| Pages | Home, Shop (all 21 SKUs, filter + sort), 2 collection pages, **21 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
+| Pages | Home, Shop (all 20 SKUs, filter + sort), 2 collection pages, **20 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
 | Product data | Extracted from your PDF catalogue into a typed, central data structure (`src/lib/catalog/`) |
 | Imagery | **85 product images + 8 editorial images**, one folder per product, gallery built automatically from the folder |
 | Commerce | Add to cart, quick add, remove, quantity controls, cart drawer, subtotal, persistent bag, checkout hand-off |
 | Shopify | Storefront API client, queries, normaliser and checkout action written and wired — dormant until credentials are set |
-| Build | 38 statically prerendered routes, ~103 kB shared JS, zero console errors |
+| Build | 37 statically prerendered routes, ~103 kB shared JS, zero console errors |
 
 ### Collections
 
 | Collection | SKUs | Route |
 |---|---|---|
-| Diffusers | 11 | `/collections/diffusers` |
+| Diffusers | 10 | `/collections/diffusers` |
 | Living & Desk | 10 | `/collections/living` |
 
 > **Lamps has been removed at your request.** The catalogue contained exactly
@@ -61,7 +61,7 @@ wrong product. Full detail in [`README.md`](./README.md#product-imagery).
 
 ---
 
-## 2. Complete SKU list — 21 products, 25 variants
+## 2. Complete SKU list — 20 products, 24 variants
 
 SKU codes are **provisional**, generated for this build. Replace them with your
 real article numbers in `src/lib/catalog/*.ts`, then use the same codes in
@@ -77,19 +77,18 @@ Shopify so the two systems line up.
 | 6 | `JL-DIF-RAIN` | [Rain Aroma Diffuser](/products/rain-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 11 | 4 |
 | 7 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
 | 8 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
-| 9 | `JL-DIF-FLAME-OVAL` | [Flame Diffuser](/products/flame-diffuser) | Aroma Diffuser | Diffusers | single | 14 | 5 |
-| 10 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
-| 11 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
-| 12 | `JL-CHG-CIRCUITRA` | [Circuitra Rotating Charging Dock](/products/circuitra-rotating-charging-dock) | Living & Desk | Living & Desk | single | 4 | 2 |
-| 13 | `JL-CHG-ROT3` | [Auto-Rotating 3-in-1 Wireless Charger](/products/auto-rotating-3in1-charger) | Living & Desk | Living & Desk | single | 4 | 4 |
-| 14 | `JL-CHG-5IN1` | [5-in-1 Foldable Wireless Charger with Speaker and Clock](/products/foldable-5in1-charger-speaker-clock) | Living & Desk | Living & Desk | single | 8 | 1 |
-| 15 | `JL-CHG-3IN1` | [3-in-1 Wireless Charger](/products/3in1-wireless-charger) | Living & Desk | Living & Desk | single | 8 | 1 |
-| 16 | `JL-CHG-TRUCK` | [Multi-Function Wireless Charging Dock](/products/multi-function-charging-dock) | Living & Desk | Living & Desk | single | 9 | 1 |
-| 17 | `JL-CLK-WOOD-PEN` | [Wooden Alarm Clock with Pen Holder](/products/wooden-alarm-clock-pen-holder) | Living & Desk | Living & Desk | single | 6 | 4 |
-| 18 | `JL-CLK-WOOD` | [Wooden Digital Alarm Clock](/products/wooden-digital-alarm-clock) | Living & Desk | Living & Desk | single | 6 | 1 |
-| 19 | `JL-DSK-STAND` | [Adjustable Laptop Stand](/products/adjustable-laptop-stand) | Living & Desk | Living & Desk | single | 12 | 4 |
-| 20 | `JL-DSK-CLEAN20` | [20-in-1 Multipurpose Cleaning Kit](/products/20in1-cleaning-kit) | Living & Desk | Living & Desk | single | 17 | 4 |
-| 21 | `JL-WEL-NECKPILLOW` | [Neck Pillow Massager](/products/neck-pillow-massager) | Living & Desk | Living & Desk | single | 18 | 4 |
+| 9 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
+| 10 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
+| 11 | `JL-CHG-CIRCUITRA` | [Circuitra Rotating Charging Dock](/products/circuitra-rotating-charging-dock) | Living & Desk | Living & Desk | single | 4 | 2 |
+| 12 | `JL-CHG-ROT3` | [Auto-Rotating 3-in-1 Wireless Charger](/products/auto-rotating-3in1-charger) | Living & Desk | Living & Desk | single | 4 | 4 |
+| 13 | `JL-CHG-5IN1` | [5-in-1 Foldable Wireless Charger with Speaker and Clock](/products/foldable-5in1-charger-speaker-clock) | Living & Desk | Living & Desk | single | 8 | 1 |
+| 14 | `JL-CHG-3IN1` | [3-in-1 Wireless Charger](/products/3in1-wireless-charger) | Living & Desk | Living & Desk | single | 8 | 1 |
+| 15 | `JL-CHG-TRUCK` | [Multi-Function Wireless Charging Dock](/products/multi-function-charging-dock) | Living & Desk | Living & Desk | single | 9 | 1 |
+| 16 | `JL-CLK-WOOD-PEN` | [Wooden Alarm Clock with Pen Holder](/products/wooden-alarm-clock-pen-holder) | Living & Desk | Living & Desk | single | 6 | 4 |
+| 17 | `JL-CLK-WOOD` | [Wooden Digital Alarm Clock](/products/wooden-digital-alarm-clock) | Living & Desk | Living & Desk | single | 6 | 1 |
+| 18 | `JL-DSK-STAND` | [Adjustable Laptop Stand](/products/adjustable-laptop-stand) | Living & Desk | Living & Desk | single | 12 | 4 |
+| 19 | `JL-DSK-CLEAN20` | [20-in-1 Multipurpose Cleaning Kit](/products/20in1-cleaning-kit) | Living & Desk | Living & Desk | single | 17 | 4 |
+| 20 | `JL-WEL-NECKPILLOW` | [Neck Pillow Massager](/products/neck-pillow-massager) | Living & Desk | Living & Desk | single | 18 | 4 |
 
 Three products carry genuine colour variants taken from the catalogue
 photography: **Wood Grain Aroma Diffuser** (Walnut / Oak), **Bird Diffuser**
@@ -102,7 +101,7 @@ variant swaps the gallery image. No other product was given invented variants.
 
 The storefront never invents a specification. Where the catalogue is silent the
 product page prints a dashed **“To be confirmed”** chip, which is honest to the
-customer and visible to you. There are **284 such fields across the 21 SKUs**.
+customer and visible to you. There are **268 such fields across the 20 SKUs**.
 
 ### Needed for every product (the fastest wins)
 
@@ -110,13 +109,13 @@ customer and visible to you. There are **284 such fields across the 21 SKUs**.
    *“Price on request”*. Set `price:` on the product and on each variant in
    `src/lib/catalog/*.ts` and the whole store — cards, product pages, cart
    subtotal, structured data — turns on at once.
-2. **Dimensions and net weight** — missing for 20 of 21 SKUs. Only the 20-in-1
+2. **Dimensions and net weight** — missing for 19 of 20 SKUs. Only the 20-in-1
    Cleaning Kit publishes measurements (89 mm × 57 mm).
 3. **Tank capacity, mist output, run time and timer settings** — missing for
    every diffuser and humidifier. These are the questions customers ask first.
 4. **Power source, input voltage and rated power** — missing across the range.
 5. **Model / article number, country of origin and warranty** — missing for all
-   21 SKUs.
+   20 SKUs.
 6. **Full pack contents** — only three products (Flame Aromatherapy Diffuser,
    Raindrop Aroma Diffuser, Adjustable Laptop Stand) state what is in the box.
 
@@ -270,25 +269,6 @@ customer and visible to you. There are **284 such fields across the 21 SKUs**.
 - Diameter
 - Net weight
 - Packed dimensions
-- Finish
-- Full pack contents
-
-### Flame Diffuser  <sub>(PDF p.14 · `JL-DIF-FLAME-OVAL`)</sub>
-
-- Tank capacity
-- Mist output
-- Run time
-- Timer settings
-- Power source
-- Input voltage
-- Rated power
-- Model / article number
-- Country of origin
-- Warranty
-- Height
-- Width
-- Depth
-- Net weight
 - Finish
 - Full pack contents
 
@@ -510,7 +490,7 @@ Full step-by-step instructions are in **[`SHOPIFY.md`](./SHOPIFY.md)**. In short
    `unauthenticated_read_product_tags`,
    `unauthenticated_write_checkouts`,
    `unauthenticated_read_checkouts`.
-3. **21 products created in Shopify** with handles matching the `handle` field
+3. **20 products created in Shopify** with handles matching the `handle` field
    in the catalogue files, variants matching the options above, and tags
    `diffusers` / `living` to drive collection membership.
 4. **Two Shopify collections** with handles `diffusers` and `living`.
