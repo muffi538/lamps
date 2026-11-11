@@ -8,7 +8,6 @@ const columns = [
     heading: 'Shop',
     links: [
       { label: 'All products', href: '/shop' },
-      { label: 'Lamps', href: '/collections/lamps' },
       { label: 'Diffusers', href: '/collections/diffusers' },
       { label: 'Living & Desk', href: '/collections/living' },
     ],

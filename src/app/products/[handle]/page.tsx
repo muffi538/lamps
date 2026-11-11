@@ -203,9 +203,7 @@ export default async function ProductPage({ params }: Params) {
           </h2>
           <div className="grid gap-12 md:grid-cols-2 md:gap-16">
             <div>
-              <h3 className="t-eyebrow mb-6">
-                {product.productType === 'Table Lamp' ? 'Installation and use' : 'Usage instructions'}
-              </h3>
+              <h3 className="t-eyebrow mb-6">Usage instructions</h3>
               <ol className="space-y-5">
                 {product.usage.map((step, i) => (
                   <li key={step.slice(0, 30)} className="flex gap-5">

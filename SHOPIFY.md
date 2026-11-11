@@ -69,7 +69,7 @@ Environment Variables*. Redeploy to apply.
 
 ## Step 3 — Create the products
 
-Create 22 products whose **handle** matches the `handle` field in
+Create 21 products whose **handle** matches the `handle` field in
 `src/lib/catalog/*.ts` exactly — that is what the product URLs are built from,
 so matching handles means no redirects and no broken links.
 
@@ -79,8 +79,8 @@ For each product set:
 |---|---|
 | Handle | `Product.handle` — must match |
 | Title | `Product.title` |
-| Product type | `Table Lamp`, `Aroma Diffuser`, `Humidifier` or `Living & Desk` |
-| Tags | `lamps`, `diffusers`, `living` — drives collection membership |
+| Product type | `Aroma Diffuser`, `Humidifier` or `Living & Desk` |
+| Tags | `diffusers`, `living` — drives collection membership |
 | Description | Product page body copy (paragraphs split on blank lines) |
 | Media | Upload the images from `public/products/<handle>/`, `main.jpg` first |
 | Variants | Option name and values as in the catalogue file |
@@ -93,7 +93,7 @@ variant matching works.
 
 ### Collections
 
-Create three collections with handles `lamps`, `diffusers`, `living`. Smart
+Create two collections with handles `diffusers` and `living`. Smart
 collections on the matching product tag are the simplest route.
 
 Collection hero imagery and straplines stay curated in

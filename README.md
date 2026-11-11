@@ -1,8 +1,8 @@
-# Élume — premium lamps & diffusers storefront
+# Élume — premium aroma diffuser storefront
 
-A custom Next.js storefront for a home-lifestyle brand selling lamps and aroma
-diffusers, built from the J L Industries Hub Pvt Ltd product catalogue and
-structured so Shopify can be switched on without redesigning anything.
+A custom Next.js storefront for a home-lifestyle brand selling aroma diffusers,
+built from the J L Industries Hub Pvt Ltd product catalogue and structured so
+Shopify can be switched on without redesigning anything.
 
 **Start here:** [`HANDOVER.md`](./HANDOVER.md) — SKU list, missing product
 information, Shopify requirements, environment variables and deployment.
@@ -52,7 +52,7 @@ src/
     layout.tsx                fonts, metadata, header, footer, cart provider
     page.tsx                  homepage
     shop/                     all products with filter + sort
-    collections/[handle]/     lamps · diffusers · living
+    collections/[handle]/     diffusers · living
     products/[handle]/        one page per SKU, statically generated
     our-story/  contact/  search/  policies/[slug]/
     actions/checkout.ts       server action → Shopify hosted checkout
@@ -69,7 +69,7 @@ src/
     ui/        Container, Reveal, Price
 
   lib/
-    catalog/   ← the product data: types, lamps, diffusers, living, collections
+    catalog/   ← the product data: types, diffusers, living, collections
                images.ts resolves each product's gallery from its own folder
                product-images.generated.ts is generated — do not edit
     shopify/   client, queries, types, normalize (server-only)

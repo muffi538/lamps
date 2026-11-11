@@ -4,12 +4,12 @@ import type { ProductInput } from './types';
  * ─────────────────────────────────────────────────────────────────────────────
  *  LIVING & DESK
  *
- *  The supplied catalogue contains ten SKUs that are neither lamps nor
- *  diffusers (wireless chargers, wooden clocks, a laptop stand, a cleaning kit
- *  and a neck massager). They are kept here as a third collection rather than
- *  dropped, so the storefront reflects the full catalogue. They are reachable
+ *  The supplied catalogue contains ten SKUs that are not diffusers (wireless
+ *  chargers, wooden clocks, a laptop stand, a cleaning kit and a neck
+ *  massager). They are kept here as a second collection rather than dropped,
+ *  so the storefront reflects the rest of the catalogue. They are reachable
  *  from /shop and /collections/living but are intentionally not in the main
- *  navigation, which stays focused on Lamps and Diffusers.
+ *  navigation, which stays focused on Diffusers.
  *
  *  Delete this file and its import in index.ts to remove them entirely.
  * ─────────────────────────────────────────────────────────────────────────────
@@ -78,7 +78,7 @@ export const living: ProductInput[] = [
       "01-main": { alt: "Circuitra rotating charging dock with a digital clock in the base", caption: "Front view" },
       "02-packaging": { alt: "Circuitra retail packaging showing the dock at two angles", caption: "Packaging" },
     },
-    related: ['auto-rotating-3in1-charger', 'wooden-digital-alarm-clock', 'floating-wireless-charging-lamp'],
+    related: ['auto-rotating-3in1-charger', 'wooden-digital-alarm-clock', 'foldable-5in1-charger-speaker-clock'],
   },
 
   {

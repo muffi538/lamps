@@ -15,9 +15,9 @@ export const site = {
     name: 'Élume',
     wordmark: 'ÉLUME',
     legalEntity: 'J L Industries Hub Pvt Ltd',
-    tagline: 'Light and scent for the considered home',
+    tagline: 'Scent and atmosphere for the considered home',
     description:
-      'Sculptural lighting and aroma diffusers for the considered home — designed around warmth, quiet and the atmosphere of everyday living.',
+      'Aroma diffusers for the considered home — designed around warmth, quiet and the atmosphere of everyday living.',
   },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com',
   contact: {
@@ -35,7 +35,6 @@ export const site = {
   nav: [
     { label: 'Home', href: '/' },
     { label: 'Shop', href: '/shop' },
-    { label: 'Lamps', href: '/collections/lamps' },
     { label: 'Diffusers', href: '/collections/diffusers' },
     { label: 'Our Story', href: '/our-story' },
   ],

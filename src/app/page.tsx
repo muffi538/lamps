@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 const FEATURED_HANDLE = 'rain-aroma-diffuser';
 
 export default async function HomePage() {
-  const [bestsellers, collections, lampProducts, diffuserProducts, featured] = await Promise.all([
+  const [bestsellers, collections, diffuserProducts, livingProducts, featured] = await Promise.all([
     getBestsellers(8),
     getCollections(),
-    getCollectionProducts('lamps'),
     getCollectionProducts('diffusers'),
+    getCollectionProducts('living'),
     getProductByHandle(FEATURED_HANDLE),
   ]);
 
   const counts: Record<string, number> = {
-    lamps: lampProducts.length,
     diffusers: diffuserProducts.length,
+    living: livingProducts.length,
   };
 
   return (
@@ -47,13 +47,13 @@ export default async function HomePage() {
             <Container className="max-w-none lg:pl-12 xl:pl-16">
               <p className="t-eyebrow animate-fade-in">New collection</p>
               <h1 id="hero-heading" className="t-display mt-6 animate-fade-up">
-                Light that
+                Scent that
                 <br />
                 settles a room.
               </h1>
               <p className="t-lead mt-7 max-w-md animate-fade-up [animation-delay:120ms]">
-                Sculptural lamps and aroma diffusers for the considered home — made for the hour
-                when the overhead lights go off and everything softens.
+                Aroma diffusers for the considered home — made for the hour when the overhead
+                lights go off and everything softens.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 animate-fade-up [animation-delay:200ms]">
                 <Link href="/shop" className="btn-primary">
@@ -85,16 +85,15 @@ export default async function HomePage() {
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Two collections"
-              title="Light, and the air around it"
-              description="The catalogue divides cleanly in two: pieces that give a room light, and pieces that give it atmosphere."
+              eyebrow="The collection"
+              title="Atmosphere, and the things around it"
+              description="Aroma diffusers built around a single idea each, and a short list of everyday objects chosen to the same standard."
               className="mb-12 md:mb-16"
             />
           </Reveal>
 
           <div className="grid gap-5 md:grid-cols-2 md:gap-8">
             {collections
-              .filter((c) => c.handle !== 'living')
               .map((collection, i) => (
                 <Reveal key={collection.handle} delay={i * 0.08}>
                   <CollectionTile
@@ -152,9 +151,9 @@ export default async function HomePage() {
               <div className="t-body mt-7 space-y-5">
                 <p>
                   Most homes are designed for daylight and then left to fend for themselves after
-                  dark. We make the objects that take over at that point — a warm globe, a slow
-                  mist, a bed of embers behind glass — each one built around a single idea rather
-                  than a list of functions.
+                  dark. We make the objects that take over at that point — a slow mist, a bed of
+                  embers behind glass, a contained rainfall — each one built around a single idea
+                  rather than a list of functions.
                 </p>
                 <p>
                   Every piece is chosen for how it behaves when it is switched on and how it looks

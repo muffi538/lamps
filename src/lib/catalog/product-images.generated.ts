@@ -523,58 +523,6 @@ export const productImages: Record<string, GeneratedImage[]> = {
       "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAIRAAAgAFBAMAAAAAAAAAAAAAAQIAAwUREgQhMWEjMmL/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAGREBAAIDAAAAAAAAAAAAAAAAAQAhAhEx/9oADAMBAAIRAxEAPwA/SVedUasJU2VJChTcICL7dmNIuOI8Kpt6g8dQeNMMrhsT8qBFimygc2HJgpiboiVrs//Z"
     }
   ],
-  "floating-wireless-charging-lamp": [
-    {
-      "file": "01-main",
-      "src": "/products/floating-wireless-charging-lamp/01-main.jpg",
-      "role": "main",
-      "description": null,
-      "order": 1,
-      "width": 900,
-      "height": 1959,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBP/EACQQAAEDAgUFAQAAAAAAAAAAAAECAwQAIQUREiIxBhNBkcHS/8QAFAEBAAAAAAAAAAAAAAAAAAAABP/EABcRAAMBAAAAAAAAAAAAAAAAAAABETH/2gAMAwEAAhEDEQA/AFgfTiZzC1mQEC3CvlDmGtNOrbMpklBKbk+KwOpkQkuJiyO3usdOZA91KZOI6RnPWbc7v1RpVoqx4f/Z"
-    },
-    {
-      "file": "02-lifestyle-wireless-charging",
-      "src": "/products/floating-wireless-charging-lamp/02-lifestyle-wireless-charging.jpg",
-      "role": "lifestyle",
-      "description": "wireless-charging",
-      "order": 2,
-      "width": 697,
-      "height": 329,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQH/xAAeEAACAgICAwAAAAAAAAAAAAABAgMEABESIQUxYf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAXEQEBAQEAAAAAAAAAAAAAAAABAgAR/9oADAMBAAIRAxEAPwABbE9OxM1WxLCynoo3vQxyv5a81eJnlBYoCSUHZ1gtp1gqcuAcyyMp38OWOWQRrpyBodYV8ZMsCU7/2Q=="
-    },
-    {
-      "file": "03-lifestyle-rotating",
-      "src": "/products/floating-wireless-charging-lamp/03-lifestyle-rotating.jpg",
-      "role": "lifestyle",
-      "description": "rotating",
-      "order": 3,
-      "width": 674,
-      "height": 329,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABf/EAB0QAAICAwADAAAAAAAAAAAAAAECAxEABTEhUbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAFhEBAQEAAAAAAAAAAAAAAAAAABFx/9oADAMBAAIRAxEAPwBbXa5ZNe8rKtqtA1Z7gzR05Ho47FO0etdBw19wGSYiRvA6cBTdf//Z"
-    },
-    {
-      "file": "04-detail-touch-control",
-      "src": "/products/floating-wireless-charging-lamp/04-detail-touch-control.jpg",
-      "role": "detail",
-      "description": "touch-control",
-      "order": 4,
-      "width": 684,
-      "height": 329,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAfEAACAgIDAAMAAAAAAAAAAAABAgMRAAQFEjETYXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACITH/2gAMAwEAAhEDEQA/ADTd6zSyfHccNkn2yPBX7ix8fpzRJK/IuHcBmF+E5K5zvrpBBBK8YZmZiDV9jdGstavBIurCDsOSEUXX1hodjVumT//Z"
-    },
-    {
-      "file": "05-lifestyle-brightness-levels",
-      "src": "/products/floating-wireless-charging-lamp/05-lifestyle-brightness-levels.jpg",
-      "role": "lifestyle",
-      "description": "brightness-levels",
-      "order": 5,
-      "width": 707,
-      "height": 329,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwT/xAAjEAACAQMDBAMAAAAAAAAAAAABAgMAESEFIjEEE1FScYKx/8QAFAEBAAAAAAAAAAAAAAAAAAAABP/EABURAQEAAAAAAAAAAAAAAAAAAAAh/9oADAMBAAIRAxEAPwAX0Sde5e10KA49uKOTTHikaNl3KSp+RVMGqTyQO7ZLvc/Tj8oj10k5MzYMm4585oVLj//Z"
-    }
-  ],
   "foldable-5in1-charger-speaker-clock": [
     {
       "file": "01-main",
