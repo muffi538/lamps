@@ -2,12 +2,24 @@ import { diffusers } from './diffusers';
 import { lamps } from './lamps';
 import { living } from './living';
 import { collections } from './collections';
-import type { Collection, CollectionHandle, Product } from './types';
+import { resolveProductImages } from './images';
+import type { Collection, CollectionHandle, Product, ProductInput } from './types';
 
-export type { Product, Collection, CollectionHandle } from './types';
+export type { Product, ProductInput, Collection, CollectionHandle, ProductImage, ImageRole } from './types';
+
+/**
+ * Attaches the gallery held in public/products/<handle>/ to an authored
+ * product record. Throws at module load if a product has no image folder or
+ * references a file that isn't there, so the mistake surfaces at build time
+ * rather than as a broken page.
+ */
+function withImages(input: ProductInput): Product {
+  const { imageDetails, ...product } = input;
+  return { ...product, images: resolveProductImages(input.handle, input.title, imageDetails) };
+}
 
 /** Single source of truth for the local catalogue, in merchandising order. */
-export const allProducts: Product[] = [...lamps, ...diffusers, ...living];
+export const allProducts: Product[] = [...lamps, ...diffusers, ...living].map(withImages);
 
 export const productsByHandle: Record<string, Product> = Object.fromEntries(
   allProducts.map((p) => [p.handle, p]),

@@ -1,3 +1,7 @@
+import type { ImageRole } from './product-images.generated';
+
+export type { ImageRole };
+
 export type Spec = {
   label: string;
   /** `null` means "not stated in the source catalogue" — rendered as a visible placeholder. */
@@ -22,11 +26,27 @@ export type ProductVariant = {
   imageIndex?: number;
 };
 
+/**
+ * Hand-written copy for one image, keyed in `ProductInput.imageDetails` by the
+ * filename without its extension (e.g. "03-detail-control"). Everything is
+ * optional — anything omitted falls back to the filename.
+ */
+export type ImageDetail = {
+  alt?: string;
+  caption?: string;
+};
+
+/** A gallery image, resolved from the product's own folder. */
 export type ProductImage = {
   src: string;
   alt: string;
-  /** Short caption used under gallery thumbnails on the product page. */
+  /** Short caption shown under the gallery on the product page. */
   caption?: string;
+  width: number;
+  height: number;
+  /** Tiny inline placeholder so the frame never flashes empty. */
+  blurDataURL: string;
+  role: ImageRole;
 };
 
 export type Feature = { title: string; body: string };
@@ -61,6 +81,18 @@ export type Product = {
   related: string[];
   featured?: boolean;
   bestseller?: boolean;
+};
+
+/**
+ * The shape authored in src/lib/catalog/*.ts.
+ *
+ * Products do not list their images. The gallery is built from the contents of
+ * public/products/<handle>/, so adding a product is: create the folder, drop in
+ * correctly named images, add this record. `imageDetails` is an optional
+ * overlay for alt text and captions.
+ */
+export type ProductInput = Omit<Product, 'images'> & {
+  imageDetails?: Record<string, ImageDetail>;
 };
 
 export type Collection = {
