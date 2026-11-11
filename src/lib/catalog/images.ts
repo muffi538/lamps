@@ -80,6 +80,7 @@ export function resolveProductImages(
       height: image.height,
       blurDataURL: image.blurDataURL,
       role: image.role,
+      ...(detail?.variant ? { variant: detail.variant } : {}),
     };
   });
 }

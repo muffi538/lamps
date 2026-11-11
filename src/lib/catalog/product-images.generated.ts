@@ -363,6 +363,46 @@ export const productImages: Record<string, GeneratedImage[]> = {
       "width": 1488,
       "height": 1057,
       "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQIE/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIEAAURAxIhMRMzQpH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAABEA/9oADAMBAAIRAxEAPwC7vcXhS4cdNYnaq+RQBhuu6XKcmirzB05FziySSoTG5B9Y65rcZnPqX9oEqC//2Q=="
+    },
+    {
+      "file": "06-colour-oak",
+      "src": "/products/wood-grain-aroma-diffuser/06-colour-oak.jpg",
+      "role": "colour",
+      "description": "oak",
+      "order": 6,
+      "width": 1199,
+      "height": 1312,
+      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAEAAQMDBQEAAAAAAAAAAAABAgAFEQMEEhQhIjFRgf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAYEQADAQEAAAAAAAAAAAAAAAAAAQISEf/aAAwDAQACEQMRAD8Aq7jdek1QAeL3jxcv7ScUlEkekzRlxtxuNzCZqMCT5RxnNJhgD5RQrTehLc8WT//Z"
+    },
+    {
+      "file": "07-angle-oak",
+      "src": "/products/wood-grain-aroma-diffuser/07-angle-oak.jpg",
+      "role": "angle",
+      "description": "oak",
+      "order": 7,
+      "width": 1199,
+      "height": 1312,
+      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAdEAABBAMBAQAAAAAAAAAAAAACAAEDBAUREiEx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAYEQACAwAAAAAAAAAAAAAAAAAAEgECEf/aAAwDAQACEQMRAD8Arr2Ujp2AAoyL3ROzfEijruJC3aGZ5XFm10PO+tJFTo+yw7LkKf/Z"
+    },
+    {
+      "file": "08-detail-oak-mist",
+      "src": "/products/wood-grain-aroma-diffuser/08-detail-oak-mist.jpg",
+      "role": "detail",
+      "description": "oak-mist",
+      "order": 8,
+      "width": 1199,
+      "height": 1312,
+      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EAB0QAAIBBQEBAAAAAAAAAAAAAAECAwAEERIxIUH/xAAVAQEBAAAAAAAAAAAAAAAAAAAEBf/EABcRAQEBAQAAAAAAAAAAAAAAAAECAAP/2gAMAwEAAhEDEQA/ANu7u4LclWkTY9Un2ik8LorBxhhmoLuRizZ+HFJHHtGp26AeVPjtSufXKQN//9k="
+    },
+    {
+      "file": "09-detail-oak-base",
+      "src": "/products/wood-grain-aroma-diffuser/09-detail-oak-base.jpg",
+      "role": "detail",
+      "description": "oak-base",
+      "order": 9,
+      "width": 1199,
+      "height": 1312,
+      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAACAQQCAgMAAAAAAAAAAAABAgMABREhBBITQVFxgf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAXEQEBAQEAAAAAAAAAAAAAAAABAgAD/9oADAMBAAIRAxEAPwCjuNyeOc+KVlKMR11jXzTEMolhSTBHZQ2PuiudZU5NwWfzsiHbxgab99UwoCqANADAFDzmylpy9KhAnf/Z"
     }
   ]
 };

@@ -34,6 +34,13 @@ export type ProductVariant = {
 export type ImageDetail = {
   alt?: string;
   caption?: string;
+  /**
+   * The option value this image belongs to, e.g. "Oak" or "Black". Images
+   * carrying a variant are shown only while that variant is selected; images
+   * without one (a shot of both finishes, say) are always shown. Must match an
+   * option value exactly — the build fails otherwise.
+   */
+  variant?: string;
 };
 
 /** A gallery image, resolved from the product's own folder. */
@@ -47,6 +54,8 @@ export type ProductImage = {
   /** Tiny inline placeholder so the frame never flashes empty. */
   blurDataURL: string;
   role: ImageRole;
+  /** Option value this image is scoped to, if any. */
+  variant?: string;
 };
 
 export type Feature = { title: string; body: string };
