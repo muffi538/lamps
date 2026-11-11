@@ -13,7 +13,20 @@ export type { Product, ProductInput, Collection, CollectionHandle, ProductImage,
  */
 function withImages(input: ProductInput): Product {
   const { imageDetails, ...product } = input;
-  return { ...product, images: resolveProductImages(input.handle, input.title, imageDetails) };
+  const images = resolveProductImages(input.handle, input.title, imageDetails);
+
+  const optionValues = new Set(input.options.flatMap((o) => o.values));
+  const unknown = images
+    .filter((i) => i.variant && !optionValues.has(i.variant))
+    .map((i) => `${i.src} -> "${i.variant}"`);
+  if (unknown.length) {
+    throw new Error(
+      `"${input.handle}" scopes images to option values that do not exist:\n  ${unknown.join('\n  ')}\n` +
+        `Known values: ${[...optionValues].join(', ') || '(none)'}`,
+    );
+  }
+
+  return { ...product, images };
 }
 
 /** Single source of truth for the local catalogue, in merchandising order. */

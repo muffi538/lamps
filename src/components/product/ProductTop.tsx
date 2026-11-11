@@ -30,9 +30,31 @@ export function ProductTop({ product }: { product: Product }) {
   const variant = useMemo(() => matchVariant(product, selected), [product, selected]);
   const unavailable = !variant || !variant.availableForSale;
 
+  /**
+   * Images can be scoped to an option value. When the selected variant has its
+   * own photography, the gallery shows that set followed by any unscoped
+   * frames — so choosing Oak swaps the gallery to the Oak shots in place,
+   * rather than sending the customer to a different page.
+   */
+  const galleryImages = useMemo(() => {
+    const chosen = new Set(Object.values(selected));
+    const scoped = product.images.filter((i) => i.variant && chosen.has(i.variant));
+    if (!scoped.length) return product.images;
+    return [...scoped, ...product.images.filter((i) => !i.variant)];
+  }, [product.images, selected]);
+
   function chooseOption(name: string, value: string) {
     const next = { ...selected, [name]: value };
     setSelected(next);
+
+    const chosen = new Set(Object.values(next));
+    const hasScopedImages = product.images.some((i) => i.variant && chosen.has(i.variant));
+    if (hasScopedImages) {
+      // The gallery is about to be rebuilt around this variant.
+      setImageIndex(0);
+      return;
+    }
+
     const v = matchVariant(product, next);
     if (v?.imageIndex !== undefined && v.imageIndex >= 0 && v.imageIndex < product.images.length) {
       setImageIndex(v.imageIndex);
@@ -48,7 +70,7 @@ export function ProductTop({ product }: { product: Product }) {
         title: product.title,
         variantTitle: variant.title === 'Default' ? null : variant.title,
         sku: variant.sku,
-        image: product.images[variant.imageIndex ?? 0]?.src ?? product.images[0]?.src ?? '',
+        image: galleryImages[imageIndex]?.src ?? galleryImages[0]?.src ?? '',
         imageAlt: product.images[0]?.alt ?? product.title,
         price: variant.price,
       },
@@ -63,7 +85,7 @@ export function ProductTop({ product }: { product: Product }) {
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
       <div className="lg:col-span-7">
         <Gallery
-          images={product.images}
+          images={galleryImages}
           activeIndex={imageIndex}
           onActiveIndexChange={setImageIndex}
           productTitle={product.title}

@@ -160,6 +160,27 @@ same order, or `01-main` is missing. `resolveProductImages()` additionally
 throws if `imageDetails` names a file that isn't on disk, so a typo or a
 deleted image surfaces at build time rather than as a broken page.
 
+### Scoping images to a variant
+
+An image can belong to one option value. Add `variant` to its entry in
+`imageDetails`:
+
+```ts
+imageDetails: {
+  '01-main':         { alt: '…' },                     // shown for every finish
+  '02-colour-walnut':{ variant: 'Walnut', alt: '…' },
+  '06-colour-oak':   { variant: 'Oak',    alt: '…' },
+}
+```
+
+Selecting a finish rebuilds the gallery around it — that variant's frames
+first, then any unscoped ones — so the customer stays on the same page and in
+the same section. Products whose variants have no photography of their own are
+unaffected and keep showing every image.
+
+The value must match an option value exactly; the build fails and names the
+offender otherwise.
+
 ### How images are framed
 
 Images are used at **whatever aspect ratio they are**. Nothing pads, stretches
