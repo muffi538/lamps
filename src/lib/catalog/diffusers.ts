@@ -1,4 +1,4 @@
-import type { Product } from './types';
+import type { ProductInput } from './types';
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
@@ -17,7 +17,7 @@ const PENDING_COMMERCIAL: { label: string; value: null }[] = [
   { label: 'Warranty', value: null },
 ];
 
-export const diffusers: Product[] = [
+export const diffusers: ProductInput[] = [
   {
     handle: 'flame-aromatherapy-diffuser',
     title: 'Flame Aromatherapy Diffuser',
@@ -99,17 +99,17 @@ export const diffusers: Product[] = [
         price: null,
       },
     ],
-    images: [
-      { src: '/products/flame-aromatherapy-diffuser/main.jpg', alt: 'Flame Aromatherapy Diffuser on a wooden table beside an essential oil bottle and USB cable', caption: 'Full set' },
-      { src: '/products/flame-aromatherapy-diffuser/glow.jpg', alt: 'Flame Aromatherapy Diffuser with a warm amber glow in a dim room', caption: 'Ambient glow' },
-      { src: '/products/flame-aromatherapy-diffuser/amber.jpg', alt: 'Flame Aromatherapy Diffuser showing the amber flame effect', caption: 'Amber flame' },
-      { src: '/products/flame-aromatherapy-diffuser/blue.jpg', alt: 'Flame Aromatherapy Diffuser showing the blue flame effect', caption: 'Blue flame' },
-      { src: '/products/flame-aromatherapy-diffuser/colour-variants.jpg', alt: 'Three Flame Aromatherapy Diffusers showing amber, blue and violet flame effects side by side', caption: 'Three light effects' },
-      { src: '/products/flame-aromatherapy-diffuser/flame-detail.jpg', alt: 'Close detail of the simulated ember bed and front control panel', caption: 'Flame detail' },
-      { src: '/products/flame-aromatherapy-diffuser/top-view.jpg', alt: 'Top view of the Flame Aromatherapy Diffuser with the crown removed', caption: 'Crown removed' },
-      { src: '/products/flame-aromatherapy-diffuser/remote.jpg', alt: 'Supplied remote control and USB cable', caption: 'Remote and cable' },
-      { src: '/products/flame-aromatherapy-diffuser/in-the-box.jpg', alt: 'Retail box, manual, remote and cable supplied with the diffuser', caption: 'In the box' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Flame Aromatherapy Diffuser on a wooden table beside an essential oil bottle and USB cable", caption: "Full set" },
+      "02-colour-glow": { alt: "Flame Aromatherapy Diffuser with a warm amber glow in a dim room", caption: "Ambient glow" },
+      "03-colour-amber": { alt: "Flame Aromatherapy Diffuser showing the amber flame effect", caption: "Amber flame" },
+      "04-colour-blue": { alt: "Flame Aromatherapy Diffuser showing the blue flame effect", caption: "Blue flame" },
+      "05-colour-variants": { alt: "Three Flame Aromatherapy Diffusers showing amber, blue and violet flame effects side by side", caption: "Three light effects" },
+      "06-detail-flame": { alt: "Close detail of the simulated ember bed and front control panel", caption: "Flame detail" },
+      "07-detail-top-view": { alt: "Top view of the Flame Aromatherapy Diffuser with the crown removed", caption: "Crown removed" },
+      "08-detail-remote": { alt: "Supplied remote control and USB cable", caption: "Remote and cable" },
+      "09-packaging-in-the-box": { alt: "Retail box, manual, remote and cable supplied with the diffuser", caption: "In the box" },
+    },
     related: ['charcoal-diffuser', 'flame-diffuser', 'candlelight-style-electric-diffuser'],
   },
 
@@ -179,10 +179,10 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'jellyfish-aroma-diffuser-default', sku: 'JL-DIF-JELLYFISH', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/jellyfish-aroma-diffuser/main.jpg', alt: 'Jellyfish Aroma Diffuser releasing five mist plumes on a styled table', caption: 'In use' },
-      { src: '/products/jellyfish-aroma-diffuser/detail.jpg', alt: 'Detail of the Jellyfish Aroma Diffuser body, controls and wood-tone legs', caption: 'Body detail' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Jellyfish Aroma Diffuser releasing five mist plumes on a styled table", caption: "In use" },
+      "02-detail": { alt: "Detail of the Jellyfish Aroma Diffuser body, controls and wood-tone legs", caption: "Body detail" },
+    },
     related: ['rain-aroma-diffuser', 'raindrop-aroma-diffuser', 'anti-gravity-diffuser'],
   },
 
@@ -250,12 +250,12 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'anti-gravity-diffuser-default', sku: 'JL-DIF-ANTIGRAV', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/anti-gravity-diffuser/main.jpg', alt: 'Anti Gravity Diffuser with a lit water droplet column and clock display', caption: 'Front view' },
-      { src: '/products/anti-gravity-diffuser/angle-1.jpg', alt: 'Anti Gravity Diffuser on a bedside table', caption: 'On a bedside' },
-      { src: '/products/anti-gravity-diffuser/angle-2.jpg', alt: 'Anti Gravity Diffuser lit in a darkened room', caption: 'After dark' },
-      { src: '/products/anti-gravity-diffuser/angle-3.jpg', alt: 'Anti Gravity Diffuser shown at an angle with the droplet column running', caption: 'Three-quarter view' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Anti Gravity Diffuser with a lit water droplet column and clock display", caption: "Front view" },
+      "02-angle-1": { alt: "Anti Gravity Diffuser on a bedside table", caption: "On a bedside" },
+      "03-angle-2": { alt: "Anti Gravity Diffuser lit in a darkened room", caption: "After dark" },
+      "04-angle-3": { alt: "Anti Gravity Diffuser shown at an angle with the droplet column running", caption: "Three-quarter view" },
+    },
     related: ['jellyfish-aroma-diffuser', 'floating-wireless-charging-lamp', 'rain-aroma-diffuser'],
   },
 
@@ -323,12 +323,12 @@ export const diffusers: Product[] = [
       { id: 'wood-grain-walnut', sku: 'JL-DIF-WOOD-WAL', title: 'Walnut', selectedOptions: [{ name: 'Finish', value: 'Walnut' }], availableForSale: true, price: null, imageIndex: 2 },
       { id: 'wood-grain-oak', sku: 'JL-DIF-WOOD-OAK', title: 'Oak', selectedOptions: [{ name: 'Finish', value: 'Oak' }], availableForSale: true, price: null, imageIndex: 3 },
     ],
-    images: [
-      { src: '/products/wood-grain-aroma-diffuser/main.jpg', alt: 'Wood Grain Aroma Diffuser in a walnut finish releasing a fine mist', caption: 'Walnut' },
-      { src: '/products/wood-grain-aroma-diffuser/pair.jpg', alt: 'Walnut and Oak Wood Grain Aroma Diffusers side by side on a table', caption: 'Both finishes' },
-      { src: '/products/wood-grain-aroma-diffuser/walnut.jpg', alt: 'Walnut Wood Grain Aroma Diffuser', caption: 'Walnut detail' },
-      { src: '/products/wood-grain-aroma-diffuser/oak.jpg', alt: 'Oak Wood Grain Aroma Diffuser', caption: 'Oak detail' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Wood Grain Aroma Diffuser in a walnut finish releasing a fine mist", caption: "Walnut" },
+      "02-lifestyle-pair": { alt: "Walnut and Oak Wood Grain Aroma Diffusers side by side on a table", caption: "Both finishes" },
+      "03-colour-walnut": { alt: "Walnut Wood Grain Aroma Diffuser", caption: "Walnut detail" },
+      "04-colour-oak": { alt: "Oak Wood Grain Aroma Diffuser", caption: "Oak detail" },
+    },
     related: ['charcoal-diffuser', 'h2o-led-humidifier', 'bird-diffuser'],
   },
 
@@ -395,12 +395,12 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'charcoal-diffuser-default', sku: 'JL-DIF-CHARCOAL', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/charcoal-diffuser/main.jpg', alt: 'Charcoal Diffuser with a glowing ember bed on a marble surface', caption: 'On marble' },
-      { src: '/products/charcoal-diffuser/angle-1.jpg', alt: 'Charcoal Diffuser on a wooden table beside a plant', caption: 'On wood' },
-      { src: '/products/charcoal-diffuser/angle-2.jpg', alt: 'Overhead view of the Charcoal Diffuser ember bed', caption: 'From above' },
-      { src: '/products/charcoal-diffuser/angle-3.jpg', alt: 'Charcoal Diffuser running in a styled interior', caption: 'In a room' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Charcoal Diffuser with a glowing ember bed on a marble surface", caption: "On marble" },
+      "02-angle-1": { alt: "Charcoal Diffuser on a wooden table beside a plant", caption: "On wood" },
+      "03-angle-2": { alt: "Overhead view of the Charcoal Diffuser ember bed", caption: "From above" },
+      "04-angle-3": { alt: "Charcoal Diffuser running in a styled interior", caption: "In a room" },
+    },
     related: ['flame-diffuser', 'flame-aromatherapy-diffuser', 'wood-grain-aroma-diffuser'],
   },
 
@@ -469,12 +469,12 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'rain-aroma-diffuser-default', sku: 'JL-DIF-RAIN', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/rain-aroma-diffuser/main.jpg', alt: 'Rain Aroma Diffuser with a warm amber column and falling water threads', caption: 'Amber setting' },
-      { src: '/products/rain-aroma-diffuser/green-glow.jpg', alt: 'Rain Aroma Diffuser lit green', caption: 'Green' },
-      { src: '/products/rain-aroma-diffuser/blue-glow.jpg', alt: 'Rain Aroma Diffuser lit blue', caption: 'Blue' },
-      { src: '/products/rain-aroma-diffuser/violet-glow.jpg', alt: 'Rain Aroma Diffuser lit violet', caption: 'Violet' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Rain Aroma Diffuser with a warm amber column and falling water threads", caption: "Amber setting" },
+      "02-colour-green-glow": { alt: "Rain Aroma Diffuser lit green", caption: "Green" },
+      "03-colour-blue-glow": { alt: "Rain Aroma Diffuser lit blue", caption: "Blue" },
+      "04-colour-violet-glow": { alt: "Rain Aroma Diffuser lit violet", caption: "Violet" },
+    },
     related: ['raindrop-aroma-diffuser', 'jellyfish-aroma-diffuser', 'anti-gravity-diffuser'],
   },
 
@@ -543,13 +543,13 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'candlelight-style-electric-diffuser-default', sku: 'JL-DIF-CANDLE', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/candlelight-style-electric-diffuser/side-table.jpg', alt: 'Candlelight Style Electric Diffuser lit on a round walnut table beside an essential oil bottle and dried gypsophila', caption: 'On a side table' },
-      { src: '/products/candlelight-style-electric-diffuser/bedside.jpg', alt: 'Candlelight Style Electric Diffuser releasing mist on a bedside table next to a lamp and books', caption: 'Bedside' },
-      { src: '/products/candlelight-style-electric-diffuser/mist-detail.jpg', alt: 'Close view of the mist outlet at the top of the amber glass cloche', caption: 'Mist outlet' },
-      { src: '/products/candlelight-style-electric-diffuser/control-detail.jpg', alt: 'Macro detail of the recessed power control on the matte black base', caption: 'Power control' },
-      { src: '/products/candlelight-style-electric-diffuser/base-detail.jpg', alt: 'Underside of the base showing four rubber feet and the ventilation grille', caption: 'Underside' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Candlelight Style Electric Diffuser lit on a round walnut table beside an essential oil bottle and dried gypsophila", caption: "On a side table" },
+      "02-lifestyle-bedside": { alt: "Candlelight Style Electric Diffuser releasing mist on a bedside table next to a lamp and books", caption: "Bedside" },
+      "03-detail-mist": { alt: "Close view of the mist outlet at the top of the amber glass cloche", caption: "Mist outlet" },
+      "04-detail-control": { alt: "Macro detail of the recessed power control on the matte black base", caption: "Power control" },
+      "05-detail-base": { alt: "Underside of the base showing four rubber feet and the ventilation grille", caption: "Underside" },
+    },
     related: ['flame-diffuser', 'wood-grain-aroma-diffuser', 'floating-wireless-charging-lamp'],
   },
 
@@ -617,14 +617,14 @@ export const diffusers: Product[] = [
       { id: 'bird-diffuser-black', sku: 'JL-DIF-BIRD-BLK', title: 'Black', selectedOptions: [{ name: 'Colour', value: 'Black' }], availableForSale: true, price: null, imageIndex: 3 },
       { id: 'bird-diffuser-amber', sku: 'JL-DIF-BIRD-AMB', title: 'Amber', selectedOptions: [{ name: 'Colour', value: 'Amber' }], availableForSale: true, price: null, imageIndex: 2 },
     ],
-    images: [
-      { src: '/products/bird-diffuser/main.jpg', alt: 'Black and Amber Bird Diffusers side by side with violet lighting', caption: 'Both colourways' },
-      { src: '/products/bird-diffuser/violet.jpg', alt: 'Bird Diffuser lit violet', caption: 'Violet light' },
-      { src: '/products/bird-diffuser/amber-violet.jpg', alt: 'Amber Bird Diffuser with violet internal lighting', caption: 'Amber body' },
-      { src: '/products/bird-diffuser/black-violet.jpg', alt: 'Black Bird Diffuser with violet internal lighting', caption: 'Black body' },
-      { src: '/products/bird-diffuser/lid-detail.jpg', alt: 'Detail of the Bird Diffuser lid and cast bird finial', caption: 'Finial detail' },
-      { src: '/products/bird-diffuser/bedside.jpg', alt: 'Bird Diffuser on a bedside beside a candle', caption: 'On a bedside' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Black and Amber Bird Diffusers side by side with violet lighting", caption: "Both colourways" },
+      "02-colour-violet": { alt: "Bird Diffuser lit violet", caption: "Violet light" },
+      "03-colour-amber-violet": { alt: "Amber Bird Diffuser with violet internal lighting", caption: "Amber body" },
+      "04-colour-black-violet": { alt: "Black Bird Diffuser with violet internal lighting", caption: "Black body" },
+      "05-detail-lid": { alt: "Detail of the Bird Diffuser lid and cast bird finial", caption: "Finial detail" },
+      "06-lifestyle-bedside": { alt: "Bird Diffuser on a bedside beside a candle", caption: "On a bedside" },
+    },
     related: ['wood-grain-aroma-diffuser', 'h2o-led-humidifier', 'candlelight-style-electric-diffuser'],
   },
 
@@ -691,13 +691,13 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'flame-diffuser-default', sku: 'JL-DIF-FLAME-OVAL', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/flame-diffuser/main.jpg', alt: 'Flame Diffuser with a tall simulated flame on a side table', caption: 'In use' },
-      { src: '/products/flame-diffuser/living-room.jpg', alt: 'Flame Diffuser in a living room setting', caption: 'Living room' },
-      { src: '/products/flame-diffuser/shelf.jpg', alt: 'Flame Diffuser on a shelf beside a vase', caption: 'On a shelf' },
-      { src: '/products/flame-diffuser/side-table.jpg', alt: 'Flame Diffuser on a side table', caption: 'Side table' },
-      { src: '/products/flame-diffuser/bedside.jpg', alt: 'Flame Diffuser on a bedside table', caption: 'Bedside' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Flame Diffuser with a tall simulated flame on a side table", caption: "In use" },
+      "02-lifestyle-living-room": { alt: "Flame Diffuser in a living room setting", caption: "Living room" },
+      "03-lifestyle-shelf": { alt: "Flame Diffuser on a shelf beside a vase", caption: "On a shelf" },
+      "04-lifestyle-side-table": { alt: "Flame Diffuser on a side table", caption: "Side table" },
+      "05-lifestyle-bedside": { alt: "Flame Diffuser on a bedside table", caption: "Bedside" },
+    },
     related: ['charcoal-diffuser', 'flame-aromatherapy-diffuser', 'candlelight-style-electric-diffuser'],
   },
 
@@ -765,16 +765,16 @@ export const diffusers: Product[] = [
       { id: 'h2o-white', sku: 'JL-HUM-H2O-WHT', title: 'White', selectedOptions: [{ name: 'Colour', value: 'White' }], availableForSale: true, price: null, imageIndex: 4 },
       { id: 'h2o-pink', sku: 'JL-HUM-H2O-PNK', title: 'Pink', selectedOptions: [{ name: 'Colour', value: 'Pink' }], availableForSale: true, price: null, imageIndex: 5 },
     ],
-    images: [
-      { src: '/products/h2o-led-humidifier/desk.jpg', alt: 'Black H2O LED Humidifier releasing mist on a desk beside headphones, a games controller and a trailing plant', caption: 'On a desk' },
-      { src: '/products/h2o-led-humidifier/studio.jpg', alt: 'Black H2O LED Humidifier with the seven-colour crown lit and a fine mist column', caption: 'Black' },
-      { src: '/products/h2o-led-humidifier/port-detail.jpg', alt: 'The USB-C port set into the body of the black H2O LED Humidifier', caption: 'USB-C port' },
-      { src: '/products/h2o-led-humidifier/top-detail.jpg', alt: 'Close view of the colour-lit crown, mist outlet and shoulder light line', caption: 'Crown detail' },
-      { src: '/products/h2o-led-humidifier/white.jpg', alt: 'White H2O LED Humidifier on a woven surface', caption: 'White' },
-      { src: '/products/h2o-led-humidifier/pink-lifestyle.jpg', alt: 'Pink H2O LED Humidifier beside a small plant', caption: 'Pink' },
-      { src: '/products/h2o-led-humidifier/colourways.jpg', alt: 'White, pink and black H2O LED Humidifiers side by side', caption: 'All three' },
-      { src: '/products/h2o-led-humidifier/white-crown.jpg', alt: 'Close view of the lit crown on the white humidifier', caption: 'White crown' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Black H2O LED Humidifier releasing mist on a desk beside headphones, a games controller and a trailing plant", caption: "On a desk" },
+      "02-angle-studio": { alt: "Black H2O LED Humidifier with the seven-colour crown lit and a fine mist column", caption: "Black" },
+      "03-detail-port": { alt: "The USB-C port set into the body of the black H2O LED Humidifier", caption: "USB-C port" },
+      "04-detail-top": { alt: "Close view of the colour-lit crown, mist outlet and shoulder light line", caption: "Crown detail" },
+      "05-colour-white": { alt: "White H2O LED Humidifier on a woven surface", caption: "White" },
+      "06-colour-pink-lifestyle": { alt: "Pink H2O LED Humidifier beside a small plant", caption: "Pink" },
+      "07-colour-ways": { alt: "White, pink and black H2O LED Humidifiers side by side", caption: "All three" },
+      "08-detail-white-crown": { alt: "Close view of the lit crown on the white humidifier", caption: "White crown" },
+    },
     related: ['wood-grain-aroma-diffuser', 'bird-diffuser', 'jellyfish-aroma-diffuser'],
   },
 
@@ -848,11 +848,11 @@ export const diffusers: Product[] = [
     variants: [
       { id: 'raindrop-aroma-diffuser-default', sku: 'JL-DIF-RAINDROP', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
-    images: [
-      { src: '/products/raindrop-aroma-diffuser/main.jpg', alt: 'Raindrop Aroma Diffuser showing the glazed landscape beneath a white canopy', caption: 'The unit' },
-      { src: '/products/raindrop-aroma-diffuser/with-packaging.jpg', alt: 'Raindrop Aroma Diffuser with its retail box, DC cable and plug adapter', caption: 'Full set' },
-      { src: '/products/raindrop-aroma-diffuser/packaging.jpg', alt: 'Printed retail box for the Raindrop Aroma Diffuser', caption: 'Retail box' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Raindrop Aroma Diffuser showing the glazed landscape beneath a white canopy", caption: "The unit" },
+      "02-packaging-with-unit": { alt: "Raindrop Aroma Diffuser with its retail box, DC cable and plug adapter", caption: "Full set" },
+      "03-packaging": { alt: "Printed retail box for the Raindrop Aroma Diffuser", caption: "Retail box" },
+    },
     related: ['rain-aroma-diffuser', 'jellyfish-aroma-diffuser', 'charcoal-diffuser'],
   },
 ];

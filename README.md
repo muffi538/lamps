@@ -23,8 +23,9 @@ it serves the catalogue extracted from the PDF.
 ```bash
 npm run build        # production build (41 prerendered routes)
 npm run start        # serve the production build
-npm run typecheck    # tsc --noEmit
+npm run typecheck      # tsc --noEmit
 npm run lint
+npm run images:manifest  # rescan public/products (runs on dev and build)
 ```
 
 ---
@@ -42,6 +43,9 @@ Framer Motion · Shopify Storefront API · Vercel.
 public/
   products/<handle>/*.jpg     81 product images cropped from the PDF
   editorial/*.jpg             8 hero / lifestyle images
+
+scripts/
+  build-image-manifest.mjs    scans public/products, emits the typed manifest
 
 src/
   app/
@@ -66,6 +70,8 @@ src/
 
   lib/
     catalog/   ← the product data: types, lamps, diffusers, living, collections
+               images.ts resolves each product's gallery from its own folder
+               product-images.generated.ts is generated — do not edit
     shopify/   client, queries, types, normalize (server-only)
     commerce.ts  the single data entry point every page reads through
     policies.ts  money.ts  utils.ts
@@ -111,16 +117,63 @@ everything is disabled under `prefers-reduced-motion`.
 
 ## Product imagery
 
-The source PDF is 18 full-page marketing posters with headlines and feature
-icons baked into the artwork, so images could not be used as supplied. Each
-product shot was isolated from its page with a crop manifest, keeping the
-original proportions — nothing is stretched or squashed. Where a crop is not
-4:5, the frame is completed with a soft blurred extension of the same photograph
-rather than by cropping into the product.
+### The folder is the source of truth
 
-All product frames are 4:5 and rendered with `object-contain`, so proportions
-are preserved while the grid stays aligned. Images are served through
-`next/image` as AVIF/WebP with explicit `sizes`.
+```
+public/products/<product-handle>/
+  01-main.jpg                   <- required, the hero and the card image
+  02-angle-three-quarter.jpg
+  03-detail-control.jpg
+  04-colour-walnut.jpg
+  05-lifestyle-bedside.jpg
+  06-packaging-in-the-box.jpg
+```
+
+Filenames follow `<NN>-<role>[-<description>].<ext>`:
+
+| part | meaning |
+|---|---|
+| `NN` | two-digit display order; `01` is the hero |
+| `role` | `main`, `angle`, `detail`, `colour`, `lifestyle` or `packaging` |
+| `description` | optional; becomes the fallback caption and alt text |
+
+A product's gallery is **exactly the contents of its own folder**, looked up by
+handle, so images can never leak between products.
+
+### Adding a product
+
+1. Create `public/products/<handle>/` and drop the images in, named as above.
+2. Add the product record to `src/lib/catalog/` — the same handle, no image
+   paths. Optionally add `imageDetails` to supply hand-written alt text and
+   captions, keyed by filename without the extension.
+3. Run `npm run dev` or `npm run build`. The manifest regenerates
+   automatically (`npm run images:manifest` runs it on its own).
+
+That's it — unlimited images per product, unlimited products. A product whose
+folder is correctly named renders a full gallery with no `imageDetails` at all;
+the overlay only exists to improve the copy.
+
+`scripts/build-image-manifest.mjs` scans the folders, records each image's real
+width, height and a tiny inline blur placeholder, and **fails the build** if a
+folder is empty, a filename doesn't match the convention, two images claim the
+same order, or `01-main` is missing. `resolveProductImages()` additionally
+throws if `imageDetails` names a file that isn't on disk, so a typo or a
+deleted image surfaces at build time rather than as a broken page.
+
+### How images are framed
+
+Images are used at **whatever aspect ratio they are**. Nothing pads, stretches
+or crops them, so the file on disk is exactly what a customer sees:
+
+- **Product page** — the stage takes the active image's own aspect ratio, with
+  the height capped at 78vh so a very tall photograph cannot take over the
+  page. Switching thumbnails cross-fades and the frame follows.
+- **Product cards** — a shared 4:5 frame with `object-contain` on the page
+  background, which keeps the grid aligned without altering any image.
+- **Thumbnails** — small square crops, purely navigational.
+
+Everything is served through `next/image` as AVIF/WebP with explicit `sizes`
+and a blur placeholder.
 
 ---
 

@@ -1,4 +1,4 @@
-import type { Product } from './types';
+import type { ProductInput } from './types';
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
@@ -28,7 +28,7 @@ const PENDING_DIMS = [
   { label: 'Net weight', value: null },
 ];
 
-export const living: Product[] = [
+export const living: ProductInput[] = [
   {
     handle: 'circuitra-rotating-charging-dock',
     title: 'Circuitra Rotating Charging Dock',
@@ -74,10 +74,10 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Keep the charging face clear of dust and metal objects.', 'Do not immerse.'],
     options: [],
     variants: [{ id: 'circuitra-default', sku: 'JL-CHG-CIRCUITRA', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/circuitra-rotating-charging-dock/main.jpg', alt: 'Circuitra rotating charging dock with a digital clock in the base', caption: 'Front view' },
-      { src: '/products/circuitra-rotating-charging-dock/packaging.jpg', alt: 'Circuitra retail packaging showing the dock at two angles', caption: 'Packaging' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Circuitra rotating charging dock with a digital clock in the base", caption: "Front view" },
+      "02-packaging": { alt: "Circuitra retail packaging showing the dock at two angles", caption: "Packaging" },
+    },
     related: ['auto-rotating-3in1-charger', 'wooden-digital-alarm-clock', 'floating-wireless-charging-lamp'],
   },
 
@@ -117,12 +117,12 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Keep charging surfaces clear of grit.', 'Do not immerse.'],
     options: [],
     variants: [{ id: 'auto-rotating-3in1-default', sku: 'JL-CHG-ROT3', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/auto-rotating-3in1-charger/main.jpg', alt: 'Auto-rotating 3-in-1 wireless charger opened into charging position', caption: 'Open' },
-      { src: '/products/auto-rotating-3in1-charger/pair.jpg', alt: 'The charger shown closed and open side by side', caption: 'Closed and open' },
-      { src: '/products/auto-rotating-3in1-charger/charge-vertically.jpg', alt: 'A phone charging vertically on the station', caption: 'Vertical' },
-      { src: '/products/auto-rotating-3in1-charger/three-devices.jpg', alt: 'A watch and earbuds charging on the station together', caption: 'Three devices' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Auto-rotating 3-in-1 wireless charger opened into charging position", caption: "Open" },
+      "02-lifestyle-pair": { alt: "The charger shown closed and open side by side", caption: "Closed and open" },
+      "03-lifestyle-charge-vertically": { alt: "A phone charging vertically on the station", caption: "Vertical" },
+      "04-lifestyle-three-devices": { alt: "A watch and earbuds charging on the station together", caption: "Three devices" },
+    },
     related: ['circuitra-rotating-charging-dock', 'foldable-5in1-charger-speaker-clock', '3in1-wireless-charger'],
   },
 
@@ -168,7 +168,9 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Keep the charging surfaces free of grit.', 'Do not immerse.'],
     options: [],
     variants: [{ id: 'foldable-5in1-default', sku: 'JL-CHG-5IN1', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [{ src: '/products/foldable-5in1-charger-speaker-clock/main.jpg', alt: '5-in-1 foldable wireless charger with a phone on the stand and an LED clock display', caption: 'In use' }],
+    imageDetails: {
+      "01-main": { alt: "5-in-1 foldable wireless charger with a phone on the stand and an LED clock display", caption: "In use" },
+    },
     related: ['3in1-wireless-charger', 'auto-rotating-3in1-charger', 'multi-function-charging-dock'],
   },
 
@@ -209,7 +211,9 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Keep charging surfaces clear.', 'Do not immerse.'],
     options: [],
     variants: [{ id: '3in1-wireless-charger-default', sku: 'JL-CHG-3IN1', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [{ src: '/products/3in1-wireless-charger/main.jpg', alt: '3-in-1 wireless charger holding a phone with a watch charging alongside', caption: 'In use' }],
+    imageDetails: {
+      "01-main": { alt: "3-in-1 wireless charger holding a phone with a watch charging alongside", caption: "In use" },
+    },
     related: ['foldable-5in1-charger-speaker-clock', 'auto-rotating-3in1-charger', 'multi-function-charging-dock'],
   },
 
@@ -248,7 +252,9 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Keep the charging surfaces clear of dust.', 'Do not immerse.'],
     options: [],
     variants: [{ id: 'multi-function-dock-default', sku: 'JL-CHG-TRUCK', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [{ src: '/products/multi-function-charging-dock/main.jpg', alt: 'Truck-shaped multi-function wireless charging dock holding a phone, earbuds and a watch', caption: 'In use' }],
+    imageDetails: {
+      "01-main": { alt: "Truck-shaped multi-function wireless charging dock holding a phone, earbuds and a watch", caption: "In use" },
+    },
     related: ['3in1-wireless-charger', 'circuitra-rotating-charging-dock', 'foldable-5in1-charger-speaker-clock'],
   },
 
@@ -287,12 +293,12 @@ export const living: Product[] = [
     care: ['Dust with a dry cloth.', 'Avoid damp cloths and cleaning sprays on the wood finish.', 'Keep away from radiators and direct sun.'],
     options: [],
     variants: [{ id: 'wooden-clock-pen-default', sku: 'JL-CLK-WOOD-PEN', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/wooden-alarm-clock-pen-holder/main.jpg', alt: 'Wooden alarm clock with an LED display beside a wooden pen holder', caption: 'On a desk' },
-      { src: '/products/wooden-alarm-clock-pen-holder/angle-1.jpg', alt: 'Wooden clock and pen holder set viewed from above', caption: 'From above' },
-      { src: '/products/wooden-alarm-clock-pen-holder/angle-2.jpg', alt: 'Wooden clock and pen holder in evening light', caption: 'Evening' },
-      { src: '/products/wooden-alarm-clock-pen-holder/angle-3.jpg', alt: 'The pen holder with the clock alongside', caption: 'Pen holder' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Wooden alarm clock with an LED display beside a wooden pen holder", caption: "On a desk" },
+      "02-angle-1": { alt: "Wooden clock and pen holder set viewed from above", caption: "From above" },
+      "03-angle-2": { alt: "Wooden clock and pen holder in evening light", caption: "Evening" },
+      "04-angle-3": { alt: "The pen holder with the clock alongside", caption: "Pen holder" },
+    },
     related: ['wooden-digital-alarm-clock', 'adjustable-laptop-stand', 'circuitra-rotating-charging-dock'],
   },
 
@@ -332,7 +338,9 @@ export const living: Product[] = [
     care: ['Dust with a dry cloth.', 'Avoid damp cloths and cleaning sprays on the wood finish.'],
     options: [],
     variants: [{ id: 'wooden-digital-clock-default', sku: 'JL-CLK-WOOD', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [{ src: '/products/wooden-digital-alarm-clock/main.jpg', alt: 'Wooden digital alarm clock showing the time and temperature on an LED display', caption: 'In use' }],
+    imageDetails: {
+      "01-main": { alt: "Wooden digital alarm clock showing the time and temperature on an LED display", caption: "In use" },
+    },
     related: ['wooden-alarm-clock-pen-holder', 'circuitra-rotating-charging-dock', 'adjustable-laptop-stand'],
   },
 
@@ -377,12 +385,12 @@ export const living: Product[] = [
     care: ['Wipe with a soft dry cloth.', 'Check the hinges are fully seated before loading a laptop.'],
     options: [],
     variants: [{ id: 'laptop-stand-default', sku: 'JL-DSK-STAND', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/adjustable-laptop-stand/main.jpg', alt: 'Laptop raised on an adjustable folding stand on a wooden desk', caption: 'In use' },
-      { src: '/products/adjustable-laptop-stand/travel-ready.jpg', alt: 'The stand folded flat beside its travel pouch', caption: 'Folded' },
-      { src: '/products/adjustable-laptop-stand/anti-slip.jpg', alt: 'Close view of the anti-slip pads', caption: 'Anti-slip pads' },
-      { src: '/products/adjustable-laptop-stand/viewing-angles.jpg', alt: 'The stand set to different viewing angles', caption: 'Angles' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Laptop raised on an adjustable folding stand on a wooden desk", caption: "In use" },
+      "02-lifestyle-travel-ready": { alt: "The stand folded flat beside its travel pouch", caption: "Folded" },
+      "03-lifestyle-anti-slip": { alt: "Close view of the anti-slip pads", caption: "Anti-slip pads" },
+      "04-lifestyle-viewing-angles": { alt: "The stand set to different viewing angles", caption: "Angles" },
+    },
     related: ['wooden-alarm-clock-pen-holder', '20in1-cleaning-kit', 'wooden-digital-alarm-clock'],
   },
 
@@ -432,12 +440,12 @@ export const living: Product[] = [
     care: ['Rinse and fully dry the brushes after wet cleaning.', 'Keep the canister closed to stop the tools collecting dust.'],
     options: [],
     variants: [{ id: 'cleaning-kit-default', sku: 'JL-DSK-CLEAN20', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/20in1-cleaning-kit/main.jpg', alt: '20-in-1 cleaning kit canister open with its tools visible', caption: 'Open canister' },
-      { src: '/products/20in1-cleaning-kit/tool-set.jpg', alt: 'All twenty tools from the cleaning kit laid out', caption: 'All 20 tools' },
-      { src: '/products/20in1-cleaning-kit/brush-detail.jpg', alt: 'Close view of the release catch and brush', caption: 'Release catch' },
-      { src: '/products/20in1-cleaning-kit/dimensions.jpg', alt: 'Dimension diagram showing 89mm height and 57mm diameter', caption: 'Dimensions' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "20-in-1 cleaning kit canister open with its tools visible", caption: "Open canister" },
+      "02-detail-tool-set": { alt: "All twenty tools from the cleaning kit laid out", caption: "All 20 tools" },
+      "03-detail-brush": { alt: "Close view of the release catch and brush", caption: "Release catch" },
+      "04-detail-dimensions": { alt: "Dimension diagram showing 89mm height and 57mm diameter", caption: "Dimensions" },
+    },
     related: ['adjustable-laptop-stand', 'wooden-alarm-clock-pen-holder', '3in1-wireless-charger'],
   },
 
@@ -495,12 +503,12 @@ export const living: Product[] = [
     ],
     options: [],
     variants: [{ id: 'neck-pillow-default', sku: 'JL-WEL-NECKPILLOW', title: 'Default', selectedOptions: [], availableForSale: true, price: null }],
-    images: [
-      { src: '/products/neck-pillow-massager/main.jpg', alt: 'Neck pillow massager worn around the neck with the control panel visible', caption: 'Worn' },
-      { src: '/products/neck-pillow-massager/product.jpg', alt: 'The neck pillow massager resting on a table', caption: 'The pillow' },
-      { src: '/products/neck-pillow-massager/control-detail.jpg', alt: 'Close view of the illuminated three-button control panel', caption: 'Controls' },
-      { src: '/products/neck-pillow-massager/travel-pouch.jpg', alt: 'The pillow beside its drawstring travel pouch', caption: 'Travel pouch' },
-    ],
+    imageDetails: {
+      "01-main": { alt: "Neck pillow massager worn around the neck with the control panel visible", caption: "Worn" },
+      "02-angle-product": { alt: "The neck pillow massager resting on a table", caption: "The pillow" },
+      "03-detail-control": { alt: "Close view of the illuminated three-button control panel", caption: "Controls" },
+      "04-lifestyle-travel-pouch": { alt: "The pillow beside its drawstring travel pouch", caption: "Travel pouch" },
+    },
     related: ['h2o-led-humidifier', 'candlelight-style-electric-diffuser', 'adjustable-laptop-stand'],
   },
 ];

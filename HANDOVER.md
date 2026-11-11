@@ -17,7 +17,7 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 |---|---|
 | Pages | Home, Shop (all 22 SKUs, filter + sort), 3 collection pages, **22 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
 | Product data | Extracted from your PDF catalogue into a typed, central data structure (`src/lib/catalog/`) |
-| Imagery | **81 product images + 8 editorial images** cropped from the PDF at full resolution — no stock photography anywhere |
+| Imagery | **85 product images + 8 editorial images**, one folder per product, gallery built automatically from the folder |
 | Commerce | Add to cart, quick add, remove, quantity controls, cart drawer, subtotal, persistent bag, checkout hand-off |
 | Shopify | Storefront API client, queries, normaliser and checkout action written and wired — dormant until credentials are set |
 | Build | 41 statically prerendered routes, ~105 kB shared JS, zero console errors |
@@ -43,6 +43,22 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 > sit in a third **Living & Desk** collection, reachable from `/shop` and the
 > footer but deliberately kept out of the main navigation. Delete
 > `src/lib/catalog/living.ts` and its import in `index.ts` to remove them.
+
+### Adding a product later
+
+The storefront reads each product's gallery straight from its own folder, so
+adding one is three steps and no image paths are ever typed by hand:
+
+1. Create `public/products/<handle>/` and drop the images in, named
+   `<NN>-<role>[-<description>].jpg` — `01-main.jpg` first, then `angle`,
+   `detail`, `colour`, `lifestyle` or `packaging` shots in display order.
+2. Add the product record to `src/lib/catalog/` using the same handle.
+3. Run `npm run build`. The image manifest regenerates and the build fails
+   loudly if anything is misnamed or missing.
+
+There is no limit on products or on images per product, and because the lookup
+is by handle into that product's own folder, images can never appear on the
+wrong product. Full detail in [`README.md`](./README.md#product-imagery).
 
 ---
 

@@ -7,6 +7,23 @@ import type { ProductImage } from '@/lib/catalog/types';
 import { CloseIcon, ZoomIcon } from '@/components/site/Icons';
 import { cn } from '@/lib/utils';
 
+/**
+ * Product gallery.
+ *
+ * Images are shown at their own aspect ratio — the frame follows the
+ * photograph rather than the photograph being padded or cropped to fit a fixed
+ * frame. Height is capped so a very tall image cannot take over the page.
+ *
+ * Handles any number of images: the desktop thumbnail rail scrolls once it
+ * runs out of room, and the mobile carousel is a snap scroller.
+ */
+const MAX_STAGE_VH = 78;
+
+/** Caps the stage height so a very tall photograph cannot take over the page. */
+function stageWidthCap(image: ProductImage) {
+  return { maxWidth: `calc(${MAX_STAGE_VH}vh * ${image.width / image.height})` };
+}
+
 export function Gallery({
   images,
   activeIndex,
@@ -21,19 +38,16 @@ export function Gallery({
   const [zooming, setZooming] = useState(false);
   const [origin, setOrigin] = useState('50% 50%');
   const [lightbox, setLightbox] = useState(false);
-  const stageRef = useRef<HTMLDivElement>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
 
   const active = images[activeIndex] ?? images[0];
 
   const onMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    setOrigin(`${x}% ${y}%`);
+    setOrigin(`${((event.clientX - rect.left) / rect.width) * 100}% ${((event.clientY - rect.top) / rect.height) * 100}%`);
   }, []);
 
-  // Keep the mobile carousel in sync when a variant changes the active image.
+  // Keep the mobile carousel in step when a variant changes the active image.
   useEffect(() => {
     const el = mobileRef.current;
     if (!el) return;
@@ -61,25 +75,26 @@ export function Gallery({
 
   return (
     <>
-      {/* ── Desktop: thumbnail rail + zoomable stage ─────────────────────── */}
+      {/* ── Desktop: thumbnail rail + stage ──────────────────────────────── */}
       <div className="hidden gap-6 md:flex">
         {images.length > 1 ? (
-          <ul className="flex w-[72px] shrink-0 flex-col gap-3" aria-label={`${productTitle} images`}>
+          <ul
+            className="hide-scrollbar flex max-h-[78vh] w-[72px] shrink-0 flex-col gap-3 overflow-y-auto"
+            aria-label={`${productTitle} images`}
+          >
             {images.map((image, i) => (
               <li key={image.src}>
                 <button
                   type="button"
                   onClick={() => onActiveIndexChange(i)}
-                  aria-label={image.caption ? `View ${image.caption}` : `View image ${i + 1}`}
+                  aria-label={image.caption ? `View ${image.caption}` : `View image ${i + 1} of ${images.length}`}
                   aria-current={i === activeIndex}
                   className={cn(
-                    'media-frame block aspect-[4/5] w-full transition-[opacity,box-shadow] duration-300',
-                    i === activeIndex
-                      ? 'opacity-100 ring-1 ring-inset ring-ink'
-                      : 'opacity-70 hover:opacity-100',
+                    'relative block aspect-square w-full overflow-hidden bg-shell transition-[opacity,box-shadow] duration-300',
+                    i === activeIndex ? 'opacity-100 ring-1 ring-inset ring-ink' : 'opacity-60 hover:opacity-100',
                   )}
                 >
-                  <Image src={image.src} alt="" fill sizes="72px" className="object-contain" />
+                  <Image src={image.src} alt="" fill sizes="72px" className="object-cover" />
                 </button>
               </li>
             ))}
@@ -87,22 +102,23 @@ export function Gallery({
         ) : null}
 
         <div className="min-w-0 flex-1">
+          <div className="mx-auto w-full" style={stageWidthCap(active)}>
           <div
-            ref={stageRef}
             onMouseEnter={() => setZooming(true)}
             onMouseLeave={() => setZooming(false)}
             onMouseMove={onMouseMove}
             onClick={() => setLightbox(true)}
-            className="media-frame group aspect-[4/5] w-full cursor-zoom-in"
-            role="button"
-            tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 setLightbox(true);
               }
             }}
+            role="button"
+            tabIndex={0}
             aria-label="Open full-size image"
+            style={{ aspectRatio: `${active.width} / ${active.height}` }}
+            className="group relative w-full cursor-zoom-in overflow-hidden bg-shell transition-[aspect-ratio] duration-500 ease-premium"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -110,7 +126,7 @@ export function Gallery({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0"
               >
                 <Image
@@ -119,7 +135,8 @@ export function Gallery({
                   fill
                   priority
                   sizes="(min-width:1280px) 46vw, (min-width:768px) 55vw, 100vw"
-                  className="object-contain transition-transform duration-[600ms] ease-premium"
+                  {...(active.blurDataURL ? { placeholder: 'blur' as const, blurDataURL: active.blurDataURL } : {})}
+                  className="object-cover transition-transform duration-[600ms] ease-premium"
                   style={{ transformOrigin: origin, transform: zooming ? 'scale(1.75)' : 'scale(1)' }}
                 />
               </motion.div>
@@ -130,7 +147,10 @@ export function Gallery({
             </span>
           </div>
 
-          {active.caption ? <p className="t-meta mt-3">{active.caption}</p> : null}
+          <p className="t-meta mt-3" aria-live="polite">
+            {active.caption ?? `${activeIndex + 1} of ${images.length}`}
+          </p>
+          </div>
         </div>
       </div>
 
@@ -138,35 +158,34 @@ export function Gallery({
       <div className="md:hidden">
         <div
           ref={mobileRef}
-          className="hide-scrollbar -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-5"
+          className="hide-scrollbar -mx-5 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto scroll-smooth px-5"
           onScroll={(e) => {
             const el = e.currentTarget;
             const index = Math.round(el.scrollLeft / (el.clientWidth * 0.88 + 12));
             if (index !== activeIndex && index >= 0 && index < images.length) onActiveIndexChange(index);
           }}
         >
-          {images.map((image) => (
-            <div key={image.src} className="media-frame aspect-[4/5] w-[88%] shrink-0 snap-start">
+          {images.map((image, i) => (
+            <div key={image.src} className="w-[88%] shrink-0 snap-start bg-shell">
               <Image
                 src={image.src}
                 alt={image.alt}
-                fill
+                width={image.width}
+                height={image.height}
                 sizes="88vw"
-                className="object-contain"
-                priority={image === images[0]}
+                priority={i === 0}
+                {...(image.blurDataURL ? { placeholder: 'blur' as const, blurDataURL: image.blurDataURL } : {})}
+                className="h-auto w-full"
               />
             </div>
           ))}
         </div>
 
-        <div className="mt-4 flex items-center justify-between">
-          <p className="t-meta">{active.caption ?? `${activeIndex + 1} / ${images.length}`}</p>
-          <div className="flex gap-1.5" aria-hidden="true">
+        <div className="mt-4 flex items-center justify-between gap-4">
+          <p className="t-meta truncate">{active.caption ?? `${activeIndex + 1} of ${images.length}`}</p>
+          <div className="flex shrink-0 gap-1.5" aria-hidden="true">
             {images.map((image, i) => (
-              <span
-                key={image.src}
-                className={cn('h-px w-5 transition-colors duration-300', i === activeIndex ? 'bg-ink' : 'bg-line')}
-              />
+              <span key={image.src} className={cn('h-px w-5 transition-colors duration-300', i === activeIndex ? 'bg-ink' : 'bg-line')} />
             ))}
           </div>
         </div>
@@ -207,12 +226,12 @@ export function Gallery({
                       type="button"
                       onClick={() => onActiveIndexChange(i)}
                       className={cn(
-                        'media-frame relative aspect-[4/5] h-16 shrink-0 transition-opacity',
+                        'relative aspect-square h-16 shrink-0 overflow-hidden bg-shell transition-opacity',
                         i === activeIndex ? 'opacity-100 ring-1 ring-inset ring-ink' : 'opacity-60 hover:opacity-100',
                       )}
                       aria-label={`Image ${i + 1}`}
                     >
-                      <Image src={image.src} alt="" fill sizes="64px" className="object-contain" />
+                      <Image src={image.src} alt="" fill sizes="64px" className="object-cover" />
                     </button>
                   ))}
                 </div>

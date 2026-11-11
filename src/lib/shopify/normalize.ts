@@ -58,7 +58,16 @@ export function normalizeProduct(
     care: editorial?.care ?? [],
     options: node.options.map((o) => ({ name: o.name, values: o.values })),
     variants,
-    images: node.images.nodes.map((img) => ({ src: img.url, alt: img.altText ?? node.title })),
+    images: node.images.nodes.map((img, i) => ({
+      src: img.url,
+      alt: img.altText ?? node.title,
+      width: img.width,
+      height: img.height,
+      // Shopify can supply a blurred placeholder via its CDN transforms; until
+      // that is wired up an empty string disables the placeholder cleanly.
+      blurDataURL: '',
+      role: i === 0 ? ('main' as const) : ('angle' as const),
+    })),
     related: [],
   };
 }
