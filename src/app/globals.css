@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #ffffff;
+    --shell: #f8f7f4;
+    --ink: #171717;
+    --muted: #777777;
+    --line: #eae8e4;
+    --accent: #a89683;
+    --header-h: 4.5rem;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #171717;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+  /* ── Typographic scale ─────────────────────────────────────────────────── */
+  .t-display {
+    @apply font-sans font-light tracking-[-0.03em] leading-[0.98];
+    font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+  }
+
+  .t-h1 {
+    @apply font-sans font-light tracking-[-0.025em] leading-[1.04];
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
+  }
+
+  .t-h2 {
+    @apply font-sans font-light tracking-[-0.02em] leading-[1.1];
+    font-size: clamp(1.625rem, 3.1vw, 2.5rem);
+  }
+
+  .t-h3 {
+    @apply font-sans font-normal tracking-[-0.015em] leading-[1.2];
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  }
+
+  .t-eyebrow {
+    @apply font-ui text-2xs uppercase tracking-widest2 text-muted;
+  }
+
+  .t-body {
+    @apply font-sans text-[0.9375rem] leading-[1.75] text-muted md:text-base;
+  }
+
+  .t-lead {
+    @apply font-sans font-light leading-[1.6] text-muted;
+    font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  }
+
+  .t-meta {
+    @apply font-ui text-[0.8125rem] leading-[1.6] text-muted;
+  }
+
+  /* ── Links ─────────────────────────────────────────────────────────────── */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-0.5 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-500 ease-premium;
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply origin-left scale-x-100;
+  }
+
+  .link-quiet {
+    @apply text-muted transition-colors duration-300 hover:text-ink;
+  }
+
+  /* ── Buttons ───────────────────────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 whitespace-nowrap
+           font-ui text-[0.8125rem] uppercase tracking-wider2
+           transition-all duration-500 ease-premium disabled:cursor-not-allowed disabled:opacity-40;
+    padding: 1rem 2rem;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-[#2b2b2b];
+  }
+
+  .btn-outline {
+    @apply btn border border-line bg-transparent text-ink hover:border-ink;
+  }
+
+  .btn-ghost {
+    @apply btn px-0 py-0 text-ink;
+  }
+
+  .btn-sm {
+    padding: 0.75rem 1.5rem;
+    @apply text-2xs;
+  }
+
+  /* ── Surfaces ──────────────────────────────────────────────────────────── */
+  .rule {
+    @apply h-px w-full bg-line;
+  }
+
+  .media-frame {
+    @apply relative overflow-hidden bg-shell;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .shell-x {
+    @apply px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .pending-chip {
+    @apply inline-flex items-center gap-1.5 border border-dashed border-line px-2 py-0.5
+           font-ui text-2xs uppercase tracking-wider2 text-muted;
+  }
+}
