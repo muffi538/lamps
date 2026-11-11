@@ -33,7 +33,7 @@ export function normalizeProduct(
   const typeKey = node.productType.trim().toLowerCase();
   const collectionsFromTags = node.tags
     .map((t) => t.toLowerCase())
-    .filter((t): t is Product['collections'][number] => t === 'diffusers' || t === 'living');
+    .filter((t): t is Product['collections'][number] => t === 'diffusers');
 
   const emptySpecs: Spec[] = [];
 
@@ -42,8 +42,8 @@ export function normalizeProduct(
     title: node.title,
     subtitle: editorial?.subtitle ?? node.seo.description ?? '',
     catalogueTagline: editorial?.catalogueTagline ?? null,
-    productType: PRODUCT_TYPE_MAP[typeKey] ?? 'Living & Desk',
-    collections: collectionsFromTags.length ? collectionsFromTags : ['living'],
+    productType: PRODUCT_TYPE_MAP[typeKey] ?? 'Aroma Diffuser',
+    collections: collectionsFromTags.length ? collectionsFromTags : ['diffusers'],
     sourcePage: 0,
     price: Number.parseFloat(node.priceRange.minVariantPrice.amount),
     description: node.description.split(/\n{2,}/).filter(Boolean),

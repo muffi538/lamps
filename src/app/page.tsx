@@ -25,17 +25,15 @@ export const metadata: Metadata = {
 const FEATURED_HANDLE = 'rain-aroma-diffuser';
 
 export default async function HomePage() {
-  const [bestsellers, collections, diffuserProducts, livingProducts, featured] = await Promise.all([
-    getBestsellers(8),
+  const [bestsellers, collections, diffuserProducts, featured] = await Promise.all([
+    getBestsellers(4),
     getCollections(),
     getCollectionProducts('diffusers'),
-    getCollectionProducts('living'),
     getProductByHandle(FEATURED_HANDLE),
   ]);
 
   const counts: Record<string, number> = {
     diffusers: diffuserProducts.length,
-    living: livingProducts.length,
   };
 
   return (
@@ -86,23 +84,23 @@ export default async function HomePage() {
           <Reveal>
             <SectionHeading
               eyebrow="The collection"
-              title="Atmosphere, and the things around it"
-              description="Aroma diffusers built around a single idea each, and a short list of everyday objects chosen to the same standard."
+              title="One idea, carefully made"
+              description="Every diffuser we carry is built around a single visual idea — a contained rainfall, a column of water that falls upward, mist shaped like a jellyfish."
               className="mb-12 md:mb-16"
             />
           </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-2 md:gap-8">
-            {collections
-              .map((collection, i) => (
-                <Reveal key={collection.handle} delay={i * 0.08}>
-                  <CollectionTile
-                    collection={collection}
-                    count={counts[collection.handle] ?? 0}
-                    priority={i === 0}
-                  />
-                </Reveal>
-              ))}
+          <div className="grid gap-5 md:gap-8">
+            {collections.map((collection, i) => (
+              <Reveal key={collection.handle} delay={i * 0.08}>
+                <CollectionTile
+                  collection={collection}
+                  count={counts[collection.handle] ?? 0}
+                  priority={i === 0}
+                  wide={collections.length === 1}
+                />
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
@@ -151,9 +149,9 @@ export default async function HomePage() {
               <div className="t-body mt-7 space-y-5">
                 <p>
                   Most homes are designed for daylight and then left to fend for themselves after
-                  dark. We make the objects that take over at that point — a slow mist, a bed of
-                  embers behind glass, a contained rainfall — each one built around a single idea
-                  rather than a list of functions.
+                  dark. We make the objects that take over at that point — a slow mist, a
+                  contained rainfall, a column of water that falls upward — each one built around
+                  a single idea rather than a list of functions.
                 </p>
                 <p>
                   Every piece is chosen for how it behaves when it is switched on and how it looks

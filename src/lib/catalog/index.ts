@@ -1,5 +1,4 @@
 import { diffusers } from './diffusers';
-import { living } from './living';
 import { collections } from './collections';
 import { resolveProductImages } from './images';
 import type { Collection, CollectionHandle, Product, ProductInput } from './types';
@@ -18,7 +17,26 @@ function withImages(input: ProductInput): Product {
 }
 
 /** Single source of truth for the local catalogue, in merchandising order. */
-export const allProducts: Product[] = [...diffusers, ...living].map(withImages);
+export const allProducts: Product[] = [...diffusers].map(withImages);
+
+/**
+ * Cross-links are plain handles, so deleting a product can leave another
+ * product pointing at something that no longer exists. Catch that at module
+ * load — during the build — rather than letting the related-products row
+ * quietly come up short.
+ */
+(function assertRelatedHandlesResolve() {
+  const known = new Set(allProducts.map((p) => p.handle));
+  const broken = allProducts
+    .flatMap((p) => p.related.filter((h) => !known.has(h)).map((h) => `${p.handle} -> ${h}`))
+    .sort();
+  if (broken.length) {
+    throw new Error(
+      `Products reference related products that do not exist:\n  ${broken.join('\n  ')}\n` +
+        `Update the \`related\` arrays in src/lib/catalog/.`,
+    );
+  }
+})();
 
 export const productsByHandle: Record<string, Product> = Object.fromEntries(
   allProducts.map((p) => [p.handle, p]),

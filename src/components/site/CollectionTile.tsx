@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Collection } from '@/lib/catalog/types';
+import { cn } from '@/lib/utils';
 import { ArrowIcon } from './Icons';
 
 export function CollectionTile({
@@ -8,11 +9,14 @@ export function CollectionTile({
   count,
   priority = false,
   image,
+  wide = false,
 }: {
   collection: Collection;
   count: number;
   priority?: boolean;
   image?: string;
+  /** Full-bleed banner proportions, for when a single collection is shown. */
+  wide?: boolean;
 }) {
   return (
     <Link
@@ -20,13 +24,13 @@ export function CollectionTile({
       className="group relative block"
       aria-label={`${collection.title} — ${count} pieces`}
     >
-      <div className="media-frame aspect-[4/5] w-full md:aspect-[3/4]">
+      <div className={cn('media-frame aspect-[4/5] w-full', wide ? 'md:aspect-[16/7]' : 'md:aspect-[3/4]')}>
         <Image
           src={image ?? collection.image}
           alt={collection.imageAlt}
           fill
           priority={priority}
-          sizes="(min-width:768px) 48vw, 92vw"
+          sizes={wide ? '100vw' : '(min-width:768px) 48vw, 92vw'}
           className="object-cover transition-transform duration-[1200ms] ease-premium group-hover:scale-[1.035]"
         />
         <div
