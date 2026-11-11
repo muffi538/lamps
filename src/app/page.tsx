@@ -213,7 +213,7 @@ export default async function HomePage() {
               <Reveal delay={0.1} className="order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
                 <div className="media-frame aspect-[4/5] w-full">
                   <Image
-                    src="/products/raindrop-aroma-diffuser/02-lifestyle-table.jpg"
+                    src="/products/raindrop-aroma-diffuser/01-main.jpg"
                     alt="The Raindrop Aroma Diffuser lit warmly on a wooden table"
                     fill
                     sizes="(min-width:1024px) 48vw, 92vw"

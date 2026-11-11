@@ -49,7 +49,7 @@ export default function OurStoryPage() {
       <section className="relative h-[46svh] min-h-[300px] w-full md:h-[64svh]">
         <Image
           src="/editorial/story.jpg"
-          alt="Walnut and oak wood grain aroma diffusers releasing mist on a table beside books and an essential oil bottle"
+          alt="Walnut and oak wood-grain aroma diffusers side by side on a wooden table beside an essential oil bottle and gypsophila"
           fill
           priority
           quality={84}
@@ -110,7 +110,7 @@ export default function OurStoryPage() {
             <div className="media-frame aspect-[3/4] w-full">
               <Image
                 src="/editorial/story-detail.jpg"
-                alt="A flame aromatherapy diffuser on a wooden table with an essential oil bottle and USB cable"
+                alt="The Candlelight Style Electric Diffuser lit on a bedside table beside a lamp and a stack of books"
                 fill
                 sizes="(min-width:1024px) 40vw, 92vw"
                 className="object-cover"

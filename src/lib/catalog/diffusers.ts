@@ -381,11 +381,11 @@ export const diffusers: ProductInput[] = [
     options: [{ name: 'Colour', values: ['Black', 'Amber'] }],
     variants: [
       { id: 'bird-diffuser-black', sku: 'JL-DIF-BIRD-BLK', title: 'Black', selectedOptions: [{ name: 'Colour', value: 'Black' }], availableForSale: true, price: null, imageIndex: 2 },
-      { id: 'bird-diffuser-amber', sku: 'JL-DIF-BIRD-AMB', title: 'Amber', selectedOptions: [{ name: 'Colour', value: 'Amber' }], availableForSale: true, price: null, imageIndex: 1 },
+      { id: 'bird-diffuser-amber', sku: 'JL-DIF-BIRD-AMB', title: 'Amber', selectedOptions: [{ name: 'Colour', value: 'Amber' }], availableForSale: true, price: null, imageIndex: 0 },
     ],
     imageDetails: {
-      "01-main": { alt: "Black and Amber Bird Diffusers side by side, both lit violet through the ribbing, with cast gold birds on their lids", caption: "Both colourways" },
-      "02-colour-amber": { alt: "Amber Bird Diffuser releasing mist on a sunlit wooden table", caption: "Amber" },
+      "01-main": { alt: "Amber Bird Diffuser releasing mist on a sunlit wooden table", caption: "Amber" },
+      "02-colour-pair": { alt: "Black and Amber Bird Diffusers side by side, both lit violet through the ribbing, with cast gold birds on their lids", caption: "Both colourways" },
       "03-colour-black": { alt: "Black Bird Diffuser lit violet on a wooden table beside a plant", caption: "Black" },
       "04-lifestyle-window": { alt: "Amber Bird Diffuser on a table by a window with dried flowers behind it", caption: "By a window" },
       "05-lifestyle-shelf": { alt: "Amber Bird Diffuser on a wooden surface with trailing foliage and a lamp behind", caption: "On a shelf" },
@@ -543,8 +543,8 @@ export const diffusers: ProductInput[] = [
       { id: 'raindrop-aroma-diffuser-default', sku: 'JL-DIF-RAINDROP', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
     imageDetails: {
-      "01-main": { alt: "Raindrop Aroma Diffuser showing the glazed landscape of moss and miniature trees beneath its white canopy", caption: "The unit" },
-      "02-lifestyle-table": { alt: "Raindrop Aroma Diffuser lit warmly on a wooden table with a plant behind it", caption: "On a table" },
+      "01-main": { alt: "Raindrop Aroma Diffuser lit warmly on a wooden table with a plant behind it", caption: "On a table" },
+      "02-angle-studio": { alt: "Raindrop Aroma Diffuser showing the glazed landscape of moss and miniature trees beneath its white canopy", caption: "The unit" },
       "03-lifestyle-bedside": { alt: "Raindrop Aroma Diffuser lit blue on a bedside table beside a candle", caption: "Bedside" },
     },
     related: ['jellyfish-aroma-diffuser', 'anti-gravity-diffuser', 'wood-grain-aroma-diffuser'],
