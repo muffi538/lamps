@@ -63,7 +63,7 @@ export function CartDrawer() {
             {lines.length === 0 ? (
               <div className="flex flex-1 flex-col items-center justify-center gap-6 px-8 text-center">
                 <p className="t-body">Your bag is empty.</p>
-                <Link href="/shop" onClick={close} className="btn-outline btn-sm">
+                <Link href="/collections/diffusers" onClick={close} className="btn-outline btn-sm">
                   Browse the collection
                 </Link>
               </div>

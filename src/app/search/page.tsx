@@ -35,7 +35,7 @@ export default async function SearchPage({
         <div className="max-w-md">
           <p className="t-body">
             Nothing matched. Try a broader term, or{' '}
-            <Link href="/shop" className="link-underline text-ink">browse the full collection</Link>.
+            <Link href="/collections/diffusers" className="link-underline text-ink">browse the full collection</Link>.
           </p>
         </div>
       ) : null}

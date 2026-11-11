@@ -69,7 +69,7 @@ export default async function ProductPage({ params }: Params) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
-      { '@type': 'ListItem', position: 2, name: 'Shop', item: `${site.url}/shop` },
+      { '@type': 'ListItem', position: 2, name: 'Diffusers', item: `${site.url}/collections/diffusers` },
       { '@type': 'ListItem', position: 3, name: product.title, item: `${site.url}/products/${product.handle}` },
     ],
   };
@@ -86,8 +86,6 @@ export default async function ProductPage({ params }: Params) {
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-2 font-ui text-2xs uppercase tracking-wider2 text-muted">
             <li><Link href="/" className="transition-colors hover:text-ink">Home</Link></li>
-            <li aria-hidden="true">/</li>
-            <li><Link href="/shop" className="transition-colors hover:text-ink">Shop</Link></li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href={`/collections/${product.collections[0]}`} className="transition-colors hover:text-ink">

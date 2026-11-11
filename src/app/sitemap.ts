@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: url('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: url('/shop'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: url('/our-story'), lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: url('/contact'), lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     ...collections.map((c) => ({

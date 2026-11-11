@@ -281,48 +281,6 @@ export const productImages: Record<string, GeneratedImage[]> = {
       "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABBESBSETM0H/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8ATecoeOuFhSCMxpp5s9M+xwNR9p7STbHDAd0e+mjW4DNbRSSxeuRhkrVlbKgkdkUDmcnBL//Z"
     }
   ],
-  "rain-aroma-diffuser": [
-    {
-      "file": "01-main",
-      "src": "/products/rain-aroma-diffuser/01-main.jpg",
-      "role": "main",
-      "description": null,
-      "order": 1,
-      "width": 899,
-      "height": 1291,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EACIQAAIBAgUFAAAAAAAAAAAAAAEDAgASBBEhIjEjQVHB4f/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGREAAwADAAAAAAAAAAAAAAAAAAERAhIx/9oADAMBAAIRAxEAPwDYQYtrZFbJzB0yI0zqXNrCyXWjye/yjYYPU0mLhZedlnunZKhcdsefFT3bjFeMP//Z"
-    },
-    {
-      "file": "02-colour-green-glow",
-      "src": "/products/rain-aroma-diffuser/02-colour-green-glow.jpg",
-      "role": "colour",
-      "description": "green-glow",
-      "order": 2,
-      "width": 900,
-      "height": 577,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAhEAABAwQBBQAAAAAAAAAAAAABAgMRAAQFMRIVIVSBkf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQARIRL/2gAMAwEAAhEDEQA/AE2bazbIcUSiAZbI3OjU5WRUFEB0gTqKu42FXLaFAGG+PrvTOi4/xWvlTc2ZF0W5/9k="
-    },
-    {
-      "file": "03-colour-blue-glow",
-      "src": "/products/rain-aroma-diffuser/03-colour-blue-glow.jpg",
-      "role": "colour",
-      "description": "blue-glow",
-      "order": 3,
-      "width": 900,
-      "height": 691,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBf/EACMQAAIBAgQHAAAAAAAAAAAAAAECAwAEESExQRITFUJRkqH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAwDAQACEQMRAD8A1rR2eJCoLRuCS+OniqRNGABxfaFiitJGhGXL023zp3RrY90ntQowmTtbv//Z"
-    },
-    {
-      "file": "04-colour-violet-glow",
-      "src": "/products/rain-aroma-diffuser/04-colour-violet-glow.jpg",
-      "role": "colour",
-      "description": "violet-glow",
-      "order": 4,
-      "width": 900,
-      "height": 672,
-      "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAANAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAEF/8QAIhAAAgEDAgcAAAAAAAAAAAAAAQIDAAQRBSESFSNRUmGS/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//EABcRAQEBAQAAAAAAAAAAAAAAAAEAEiH/2gAMAwEAAhEDEQA/ANyzkaSJGUAxMCSxO47UkXkIGOIbe6mnqrTIhUHp4pXKbXxb6NF1DMjf/9k="
-    }
-  ],
   "raindrop-aroma-diffuser": [
     {
       "file": "01-main",

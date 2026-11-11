@@ -90,7 +90,7 @@ export const diffusers: ProductInput[] = [
       "02-lifestyle-counter": { alt: "Jellyfish Aroma Diffuser on a kitchen counter beside books, a candle and a trailing plant", caption: "On a counter" },
       "03-detail-nozzles": { alt: "Close view from above of the black nozzle plate and the five jellyfish plumes", caption: "Nozzle plate" },
     },
-    related: ['rain-aroma-diffuser', 'raindrop-aroma-diffuser', 'anti-gravity-diffuser'],
+    related: ['raindrop-aroma-diffuser', 'anti-gravity-diffuser', 'jellyfish-aroma-diffuser'],
   },
 
   {
@@ -162,7 +162,7 @@ export const diffusers: ProductInput[] = [
       "02-lifestyle-glow": { alt: "Anti Gravity Diffuser glowing warmly on a bedside table beside books and a plant", caption: "After dark" },
       "03-lifestyle-bedside": { alt: "Anti Gravity Diffuser releasing mist on a round bedside table beside a bed", caption: "Bedside" },
     },
-    related: ['jellyfish-aroma-diffuser', 'candlelight-style-electric-diffuser', 'rain-aroma-diffuser'],
+    related: ['jellyfish-aroma-diffuser', 'candlelight-style-electric-diffuser', 'anti-gravity-diffuser'],
   },
 
   {
@@ -243,79 +243,6 @@ export const diffusers: ProductInput[] = [
   },
 
 
-  {
-    handle: 'rain-aroma-diffuser',
-    title: 'Rain Aroma Diffuser',
-    subtitle: 'A parasol canopy and a falling curtain of water, lit from the centre.',
-    catalogueTagline: 'Soothing Rain. Calm Mind.',
-    productType: 'Aroma Diffuser',
-    collections: ['diffusers'],
-    sourcePage: 11,
-    price: null,
-    featured: true,
-    bestseller: true,
-    description: [
-      'The Rain Aroma Diffuser is built around one idea: a small, contained rainfall you can watch from a chair. A ribbed parasol canopy shelters a lit central column, and water descends from the canopy edge in fine, even threads before gathering in the clear tray below.',
-      'The body is a smooth white cylinder with an embossed umbrella motif and three touch controls across the front. The central column changes colour — the catalogue shows warm amber, green, blue and violet settings, each one giving the falling water a different cast.',
-      'Alongside the visual effect the diffuser carries its four stated qualities: a soothing rain effect, aromatherapy comfort, ambient glow light, and relaxation.',
-    ],
-    features: [
-      { title: 'Soothing rain effect', body: 'Water falls from the canopy edge in fine threads into a clear tray.' },
-      { title: 'Aromatherapy comfort', body: 'Takes water-soluble essential oils alongside the rain feature.' },
-      { title: 'Ambient glow light', body: 'A lit central column, shown in amber, green, blue and violet.' },
-      { title: 'Relax and unwind', body: 'Designed as a focal piece for living rooms and bedrooms.' },
-      { title: 'Three-button control', body: 'Touch controls set into the front of the body.' },
-    ],
-    specs: [
-      { label: 'Diffuser type', value: 'Rain-effect water feature with aroma diffusion and ambient light' },
-      { label: 'Light effect', value: 'Colour-changing central column — amber, green, blue and violet shown' },
-      { label: 'Controls', value: 'Three front-panel touch controls' },
-      { label: 'Tank capacity', value: null },
-      { label: 'Mist output', value: null },
-      { label: 'Run time', value: null },
-      { label: 'Timer settings', value: null },
-      { label: 'Power source', value: null },
-      { label: 'Input voltage', value: null },
-      { label: 'Rated power', value: null },
-      ...PENDING_COMMERCIAL,
-    ],
-    dimensions: [
-      { label: 'Height', value: null },
-      { label: 'Diameter', value: null },
-      { label: 'Net weight', value: null },
-      { label: 'Packed dimensions', value: null },
-    ],
-    materials: [
-      { label: 'Body', value: 'Matte white moulded housing with an embossed umbrella motif' },
-      { label: 'Canopy', value: 'Ribbed parasol top' },
-      { label: 'Tray', value: 'Clear collection tray' },
-      { label: 'Finish', value: null },
-    ],
-    inTheBox: ['Rain Aroma Diffuser', null],
-    usage: [
-      'Stand the diffuser on a level surface — an uneven base will make the rain threads fall unevenly.',
-      'Fill the reservoir with clean room-temperature water to the marked line and add essential oil if desired.',
-      'Connect the power supply and use the front controls for power, light colour and mist.',
-      'Allow a short settling period for the rain curtain to form evenly around the canopy.',
-    ],
-    care: [
-      'Change the water every few days; top up before the level drops below the minimum mark.',
-      'Wipe the canopy and tray with a soft cloth to keep the water threads clean.',
-      'Descale the unit periodically with diluted white vinegar if you are in a hard-water area.',
-      'Empty the unit fully before storing or transporting it.',
-    ],
-    options: [],
-    variants: [
-      { id: 'rain-aroma-diffuser-default', sku: 'JL-DIF-RAIN', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
-    ],
-    imageDetails: {
-      "01-main": { alt: "Rain Aroma Diffuser with a warm amber column and falling water threads", caption: "Amber setting" },
-      "02-colour-green-glow": { alt: "Rain Aroma Diffuser lit green", caption: "Green" },
-      "03-colour-blue-glow": { alt: "Rain Aroma Diffuser lit blue", caption: "Blue" },
-      "04-colour-violet-glow": { alt: "Rain Aroma Diffuser lit violet", caption: "Violet" },
-    },
-    related: ['raindrop-aroma-diffuser', 'jellyfish-aroma-diffuser', 'anti-gravity-diffuser'],
-  },
 
   {
     handle: 'candlelight-style-electric-diffuser',
@@ -620,6 +547,6 @@ export const diffusers: ProductInput[] = [
       "02-lifestyle-table": { alt: "Raindrop Aroma Diffuser lit warmly on a wooden table with a plant behind it", caption: "On a table" },
       "03-lifestyle-bedside": { alt: "Raindrop Aroma Diffuser lit blue on a bedside table beside a candle", caption: "Bedside" },
     },
-    related: ['rain-aroma-diffuser', 'jellyfish-aroma-diffuser', 'anti-gravity-diffuser'],
+    related: ['jellyfish-aroma-diffuser', 'anti-gravity-diffuser', 'wood-grain-aroma-diffuser'],
   },
 ];
