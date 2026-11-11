@@ -110,7 +110,7 @@ export const diffusers: ProductInput[] = [
       "08-detail-remote": { alt: "Supplied remote control and USB cable", caption: "Remote and cable" },
       "09-packaging-in-the-box": { alt: "Retail box, manual, remote and cable supplied with the diffuser", caption: "In the box" },
     },
-    related: ['charcoal-diffuser', 'flame-diffuser', 'candlelight-style-electric-diffuser'],
+    related: ['charcoal-diffuser', 'bird-diffuser', 'candlelight-style-electric-diffuser'],
   },
 
   {
@@ -550,7 +550,7 @@ export const diffusers: ProductInput[] = [
       "04-detail-control": { alt: "Macro detail of the recessed power control on the matte black base", caption: "Power control" },
       "05-detail-base": { alt: "Underside of the base showing four rubber feet and the ventilation grille", caption: "Underside" },
     },
-    related: ['flame-diffuser', 'wood-grain-aroma-diffuser', 'charcoal-diffuser'],
+    related: ['flame-aromatherapy-diffuser', 'wood-grain-aroma-diffuser', 'charcoal-diffuser'],
   },
 
   {
@@ -628,78 +628,6 @@ export const diffusers: ProductInput[] = [
     related: ['wood-grain-aroma-diffuser', 'h2o-led-humidifier', 'candlelight-style-electric-diffuser'],
   },
 
-  {
-    handle: 'flame-diffuser',
-    title: 'Flame Diffuser',
-    subtitle: 'A low matte-black oval with a tall, unmistakable flame rising from its centre.',
-    catalogueTagline: 'Feel the Comfort.',
-    productType: 'Aroma Diffuser',
-    collections: ['diffusers'],
-    sourcePage: 14,
-    price: null,
-    bestseller: true,
-    description: [
-      'The Flame Diffuser does one thing with real confidence. The housing is deliberately plain — a low matte-black oval, no more than a plinth — so that everything you notice is the tall simulated flame rising out of it.',
-      'The effect is produced by light on mist, which means the flame moves and leans the way a real one does while the unit stays cool to the touch. Two small amber-lit controls are the only markings on the front face, and an embossed mist symbol sits above them.',
-      'The catalogue lists a cosy warm glow, a calming ambience, soothing comfort and relaxation. Photographed across living rooms, shelves and bedsides, it reads as a hearth for rooms that do not have one.',
-    ],
-    features: [
-      { title: 'Cosy warm glow', body: 'A tall simulated flame produced by light on mist.' },
-      { title: 'Calming ambience', body: 'Flame movement is irregular, like a real flame.' },
-      { title: 'Soothing comfort', body: 'Disperses water-soluble essential oils as it runs.' },
-      { title: 'Relax and unwind', body: 'Photographed for living rooms, shelves and bedsides.' },
-      { title: 'Minimal housing', body: 'A low matte-black oval with two front controls.' },
-    ],
-    specs: [
-      { label: 'Diffuser type', value: 'Ultrasonic aroma diffuser with simulated flame effect' },
-      { label: 'Light effect', value: 'Tall simulated flame above the mist outlet' },
-      { label: 'Controls', value: 'Two amber-lit front controls' },
-      { label: 'Tank capacity', value: null },
-      { label: 'Mist output', value: null },
-      { label: 'Run time', value: null },
-      { label: 'Timer settings', value: null },
-      { label: 'Power source', value: null },
-      { label: 'Input voltage', value: null },
-      { label: 'Rated power', value: null },
-      ...PENDING_COMMERCIAL,
-    ],
-    dimensions: [
-      { label: 'Height', value: null },
-      { label: 'Width', value: null },
-      { label: 'Depth', value: null },
-      { label: 'Net weight', value: null },
-    ],
-    materials: [
-      { label: 'Body', value: 'Matte black moulded housing' },
-      { label: 'Detail', value: 'Embossed mist symbol on the front face' },
-      { label: 'Finish', value: null },
-    ],
-    inTheBox: ['Flame Diffuser', null],
-    usage: [
-      'Place on a level surface with clear space above — the flame needs headroom to form.',
-      'Open the lid and fill the reservoir with clean room-temperature water to the marked line.',
-      'Add a few drops of a water-soluble essential oil and switch on using the front controls.',
-      'The flame effect is strongest in low ambient light.',
-    ],
-    care: [
-      'Empty and dry the reservoir after each use.',
-      'Wipe the matte housing with a soft dry cloth; matte finishes mark easily with oils.',
-      'Clean the atomising disc weekly with a cotton bud and diluted white vinegar.',
-      'Keep the mist outlet clear of dust so the flame stays even.',
-    ],
-    options: [],
-    variants: [
-      { id: 'flame-diffuser-default', sku: 'JL-DIF-FLAME-OVAL', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
-    ],
-    imageDetails: {
-      "01-main": { alt: "Flame Diffuser with a tall simulated flame on a side table", caption: "In use" },
-      "02-lifestyle-living-room": { alt: "Flame Diffuser in a living room setting", caption: "Living room" },
-      "03-lifestyle-shelf": { alt: "Flame Diffuser on a shelf beside a vase", caption: "On a shelf" },
-      "04-lifestyle-side-table": { alt: "Flame Diffuser on a side table", caption: "Side table" },
-      "05-lifestyle-bedside": { alt: "Flame Diffuser on a bedside table", caption: "Bedside" },
-    },
-    related: ['charcoal-diffuser', 'flame-aromatherapy-diffuser', 'candlelight-style-electric-diffuser'],
-  },
 
   {
     handle: 'h2o-led-humidifier',
