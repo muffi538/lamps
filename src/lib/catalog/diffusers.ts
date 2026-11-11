@@ -544,8 +544,11 @@ export const diffusers: Product[] = [
       { id: 'candlelight-style-electric-diffuser-default', sku: 'JL-DIF-CANDLE', title: 'Default', selectedOptions: [], availableForSale: true, price: null },
     ],
     images: [
-      { src: '/products/candlelight-style-electric-diffuser/main.jpg', alt: 'Candlelight Style Electric Diffuser with a lit filament behind tinted glass', caption: 'In use' },
-      { src: '/products/candlelight-style-electric-diffuser/detail.jpg', alt: 'Close view of the Candlelight Style Electric Diffuser cloche and base control', caption: 'Detail' },
+      { src: '/products/candlelight-style-electric-diffuser/main.jpg', alt: 'Candlelight Style Electric Diffuser lit on a round walnut table beside an essential oil bottle and dried gypsophila', caption: 'On a side table' },
+      { src: '/products/candlelight-style-electric-diffuser/bedside.jpg', alt: 'Candlelight Style Electric Diffuser releasing mist on a bedside table next to a lamp and books', caption: 'Bedside' },
+      { src: '/products/candlelight-style-electric-diffuser/mist-detail.jpg', alt: 'Close view of the mist outlet at the top of the amber glass cloche', caption: 'Mist outlet' },
+      { src: '/products/candlelight-style-electric-diffuser/control-detail.jpg', alt: 'Macro detail of the recessed power control on the matte black base', caption: 'Power control' },
+      { src: '/products/candlelight-style-electric-diffuser/base-detail.jpg', alt: 'Underside of the base showing four rubber feet and the ventilation grille', caption: 'Underside' },
     ],
     related: ['flame-diffuser', 'wood-grain-aroma-diffuser', 'floating-wireless-charging-lamp'],
   },
