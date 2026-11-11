@@ -175,7 +175,7 @@ export const policies: Policy[] = [
       {
         heading: 'Electrical safety',
         paragraphs: [
-          'Products are for indoor domestic use unless stated otherwise. Use only the supplied power adapter and cable. Do not immerse any electrical part in water, and keep lamps and diffusers away from soft furnishings.',
+          'Products are for indoor domestic use unless stated otherwise. Use only the supplied power adapter and cable. Do not immerse any electrical part in water, and keep diffusers and humidifiers away from soft furnishings.',
         ],
       },
       {

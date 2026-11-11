@@ -8,18 +8,18 @@ import { Reveal } from '@/components/ui/Reveal';
 export const metadata: Metadata = {
   title: 'Our story',
   description:
-    'How we choose the lamps and diffusers we sell — a small collection built around atmosphere, restraint and honest specification.',
+    'How we choose the diffusers we sell — a small collection built around atmosphere, restraint and honest specification.',
   alternates: { canonical: '/our-story' },
 };
 
 const principles = [
   {
     title: 'One idea per object',
-    body: 'Every piece in the collection is built around a single effect — a suspended globe, a bed of embers, a contained rainfall. Objects that try to do five things rarely do any of them beautifully.',
+    body: 'Every piece in the collection is built around a single effect — a bed of embers, a contained rainfall, a column of mist shaped like a flame. Objects that try to do five things rarely do any of them beautifully.',
   },
   {
     title: 'It has to look right switched off',
-    body: 'A lamp spends most of its life unlit and a diffuser spends most of its life empty. We judge each piece by how it sits on a table in daylight, before we judge what it does at night.',
+    body: 'A diffuser spends most of its life switched off and empty. We judge each piece by how it sits on a table in daylight, before we judge what it does at night.',
   },
   {
     title: 'Specifications we can stand behind',
@@ -27,7 +27,7 @@ const principles = [
   },
   {
     title: 'A short list, kept short',
-    body: 'We would rather carry twenty-two pieces we can describe properly than two hundred we cannot. New arrivals are added slowly and announced quietly.',
+    body: 'We would rather carry twenty-one pieces we can describe properly than two hundred we cannot. New arrivals are added slowly and announced quietly.',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function OurStoryPage() {
           <h1 className="t-display mt-6">The hour after the overhead lights go off</h1>
           <p className="t-lead mt-8 max-w-2xl">
             {site.brand.name} began with a simple observation: most homes are furnished for daylight.
-            The pieces that actually set the mood of a room — the lamp on the console, the diffuser
+            The pieces that actually set the mood of a room — the diffuser on the console, the one
             on the bathroom shelf — are usually the last thing anyone chooses, and it shows.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function OurStoryPage() {
                 them, not renders waiting on a minimum order.
               </p>
               <p>
-                What we do add is editing. Of everything available we carry twenty-two pieces, and
+                What we do add is editing. Of everything available we carry twenty-one pieces, and
                 each one earned its place by being good at a single thing — warmth, quiet, scent,
                 or the small theatre of watching mist move.
               </p>
@@ -122,13 +122,13 @@ export default function OurStoryPage() {
             <h2 className="t-h2">Where to begin</h2>
             <p className="t-body mt-6 text-[1rem]">
               If you are buying one piece, buy the one you will see most often. A diffuser on a
-              hallway console works harder than a lamp in a spare room. If you are buying for
+              hallway console works harder than one in a spare room. If you are buying for
               someone else, the wood-grain diffuser and the candlelight diffuser are the two that
               suit almost any interior.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Link href="/collections/lamps" className="btn-outline">Browse lamps</Link>
               <Link href="/collections/diffusers" className="btn-outline">Browse diffusers</Link>
+              <Link href="/shop" className="btn-outline">Shop all</Link>
             </div>
           </Reveal>
         </div>

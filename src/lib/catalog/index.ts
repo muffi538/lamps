@@ -1,5 +1,4 @@
 import { diffusers } from './diffusers';
-import { lamps } from './lamps';
 import { living } from './living';
 import { collections } from './collections';
 import { resolveProductImages } from './images';
@@ -19,7 +18,7 @@ function withImages(input: ProductInput): Product {
 }
 
 /** Single source of truth for the local catalogue, in merchandising order. */
-export const allProducts: Product[] = [...lamps, ...diffusers, ...living].map(withImages);
+export const allProducts: Product[] = [...diffusers, ...living].map(withImages);
 
 export const productsByHandle: Record<string, Product> = Object.fromEntries(
   allProducts.map((p) => [p.handle, p]),

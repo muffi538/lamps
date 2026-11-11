@@ -2,8 +2,6 @@ import type { Product, ProductVariant, Spec } from '@/lib/catalog/types';
 import type { ShopifyProduct } from './types';
 
 const PRODUCT_TYPE_MAP: Record<string, Product['productType']> = {
-  lamp: 'Table Lamp',
-  'table lamp': 'Table Lamp',
   diffuser: 'Aroma Diffuser',
   'aroma diffuser': 'Aroma Diffuser',
   humidifier: 'Humidifier',
@@ -35,7 +33,7 @@ export function normalizeProduct(
   const typeKey = node.productType.trim().toLowerCase();
   const collectionsFromTags = node.tags
     .map((t) => t.toLowerCase())
-    .filter((t): t is Product['collections'][number] => t === 'lamps' || t === 'diffusers' || t === 'living');
+    .filter((t): t is Product['collections'][number] => t === 'diffusers' || t === 'living');
 
   const emptySpecs: Spec[] = [];
 

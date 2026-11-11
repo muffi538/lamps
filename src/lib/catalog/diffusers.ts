@@ -192,7 +192,7 @@ export const diffusers: ProductInput[] = [
     subtitle: 'A column of water that appears to fall upward, lit from within and topped with a clock.',
     catalogueTagline: 'Water Harmony',
     productType: 'Aroma Diffuser',
-    collections: ['diffusers', 'lamps'],
+    collections: ['diffusers'],
     sourcePage: 3,
     price: null,
     featured: true,
@@ -256,7 +256,7 @@ export const diffusers: ProductInput[] = [
       "03-angle-2": { alt: "Anti Gravity Diffuser lit in a darkened room", caption: "After dark" },
       "04-angle-3": { alt: "Anti Gravity Diffuser shown at an angle with the droplet column running", caption: "Three-quarter view" },
     },
-    related: ['jellyfish-aroma-diffuser', 'floating-wireless-charging-lamp', 'rain-aroma-diffuser'],
+    related: ['jellyfish-aroma-diffuser', 'candlelight-style-electric-diffuser', 'rain-aroma-diffuser'],
   },
 
   {
@@ -484,7 +484,7 @@ export const diffusers: ProductInput[] = [
     subtitle: 'A glass cloche over a flickering filament — candlelight without the flame.',
     catalogueTagline: 'For a Calmer You. Soothing Fragrance Anytime, Anywhere.',
     productType: 'Aroma Diffuser',
-    collections: ['diffusers', 'lamps'],
+    collections: ['diffusers'],
     sourcePage: 13,
     price: null,
     featured: true,
@@ -550,7 +550,7 @@ export const diffusers: ProductInput[] = [
       "04-detail-control": { alt: "Macro detail of the recessed power control on the matte black base", caption: "Power control" },
       "05-detail-base": { alt: "Underside of the base showing four rubber feet and the ventilation grille", caption: "Underside" },
     },
-    related: ['flame-diffuser', 'wood-grain-aroma-diffuser', 'floating-wireless-charging-lamp'],
+    related: ['flame-diffuser', 'wood-grain-aroma-diffuser', 'charcoal-diffuser'],
   },
 
   {

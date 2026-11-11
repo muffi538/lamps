@@ -51,7 +51,7 @@ export type ProductImage = {
 
 export type Feature = { title: string; body: string };
 
-export type CollectionHandle = 'lamps' | 'diffusers' | 'living';
+export type CollectionHandle = 'diffusers' | 'living';
 
 export type Product = {
   handle: string;
@@ -60,7 +60,7 @@ export type Product = {
   subtitle: string;
   /** Verbatim positioning line from the supplied catalogue page. */
   catalogueTagline: string | null;
-  productType: 'Table Lamp' | 'Aroma Diffuser' | 'Humidifier' | 'Living & Desk';
+  productType: 'Aroma Diffuser' | 'Humidifier' | 'Living & Desk';
   collections: CollectionHandle[];
   /** Page of the supplied PDF this SKU was extracted from. */
   sourcePage: number;

@@ -171,9 +171,45 @@ export const IMAGE_ROLES: ImageRole[] = ${JSON.stringify(ROLES)};
     console.warn('');
   }
 
+  checkHandWrittenReferences();
+
   console.log(
     `✓ Image manifest: ${total} images across ${Object.keys(manifest).length} products -> ${path.relative(ROOT, OUT)}`,
   );
+}
+
+/**
+ * A few images are referenced by hand rather than through the manifest —
+ * collection tiles and the editorial photography on the home and story pages.
+ * Those paths can silently rot when a file is renamed, so verify every one of
+ * them points at a file that exists.
+ */
+function checkHandWrittenReferences() {
+  const sourceFiles = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (/\.(ts|tsx)$/.test(entry.name) && !entry.name.endsWith('.generated.ts')) sourceFiles.push(full);
+    }
+  };
+  walk(path.join(ROOT, 'src'));
+
+  const broken = [];
+  for (const file of sourceFiles) {
+    const source = fs.readFileSync(file, 'utf8');
+    for (const match of source.matchAll(/['"`](\/(?:products|editorial)\/[^'"`$]+?\.(?:jpe?g|png|webp|avif|svg))['"`]/g)) {
+      const asset = path.join(ROOT, 'public', match[1]);
+      if (!fs.existsSync(asset)) broken.push(`${path.relative(ROOT, file)} -> ${match[1]}`);
+    }
+  }
+
+  if (broken.length) {
+    console.error('\n✗ Image references point at files that do not exist:\n');
+    for (const b of broken) console.error(`   ${b}`);
+    console.error('');
+    process.exit(1);
+  }
 }
 
 build().catch((err) => {

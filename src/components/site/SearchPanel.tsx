@@ -96,7 +96,7 @@ export function SearchPanel({ open, onClose }: { open: boolean; onClose: () => v
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   type="search"
-                  placeholder="Search lamps, diffusers, desk objects…"
+                  placeholder="Search diffusers, humidifiers, desk objects…"
                   className="h-full w-full border-0 bg-transparent font-sans text-base font-light tracking-[-0.01em] text-ink outline-none placeholder:text-muted"
                   aria-label="Search products"
                 />
@@ -109,7 +109,7 @@ export function SearchPanel({ open, onClose }: { open: boolean; onClose: () => v
                 {query.trim().length < 2 ? (
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                     <span className="t-eyebrow">Popular</span>
-                    {['Flame', 'Rain', 'Wood grain', 'Lamp', 'Humidifier'].map((term) => (
+                    {['Flame', 'Rain', 'Wood grain', 'Charcoal', 'Humidifier'].map((term) => (
                       <button
                         key={term}
                         type="button"
