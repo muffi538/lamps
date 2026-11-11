@@ -69,7 +69,7 @@ export default async function HomePage() {
           <div className="relative order-1 min-h-[52svh] lg:order-2 lg:col-span-7 lg:min-h-0">
             <Image
               src="/editorial/hero.jpg"
-              alt="A candlelight-style electric diffuser releasing a fine mist beside books and a potted plant in a warm interior"
+              alt="The Candlelight Style Electric Diffuser lit and releasing a fine mist on a round walnut table in a warm living room"
               fill
               priority
               quality={85}
