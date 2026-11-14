@@ -17,7 +17,7 @@ A custom Next.js 15 storefront — not a Shopify theme — with:
 |---|---|
 | Pages | Home, Diffusers (all 7 SKUs, filter + sort), **7 individual product pages**, Our Story, Contact, Search, 4 policy pages, 404 |
 | Product data | Extracted from your PDF catalogue into a typed, central data structure (`src/lib/catalog/`) |
-| Imagery | **33 product images + 5 editorial images**, one folder per product, gallery built automatically from the folder |
+| Imagery | **38 product images + 5 editorial images**, one folder per product, gallery built automatically from the folder |
 | Commerce | Add to cart, quick add, remove, quantity controls, cart drawer, subtotal, persistent bag, checkout hand-off |
 | Shopify | Storefront API client, queries, normaliser and checkout action written and wired — dormant until credentials are set |
 | Build | 22 statically prerendered routes, ~103 kB shared JS, zero console errors |
@@ -62,7 +62,7 @@ wrong product. Full detail in [`README.md`](./README.md#product-imagery).
 
 ---
 
-## 2. Complete SKU list — 7 products, 11 variants
+## 2. Complete SKU list — 7 products, 12 variants
 
 SKU codes are **provisional**, generated for this build. Replace them with your
 real article numbers in `src/lib/catalog/*.ts`, then use the same codes in
@@ -72,16 +72,20 @@ Shopify so the two systems line up.
 |---|---|---|---|---|---|---|---|
 | 1 | `JL-DIF-JELLYFISH` | [Jellyfish Aroma Diffuser](/products/jellyfish-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 3 |
 | 2 | `JL-DIF-ANTIGRAV` | [Anti Gravity Diffuser](/products/anti-gravity-diffuser) | Aroma Diffuser | Diffusers | single | 3 | 3 |
-| 3 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak | 7 | 5 |
+| 3 | `JL-DIF-WOOD-WAL` | [Wood Grain Aroma Diffuser](/products/wood-grain-aroma-diffuser) | Aroma Diffuser | Diffusers | Walnut / Oak / Walnut & Oak | 7 | 10 |
 | 4 | `JL-DIF-CANDLE` | [Candlelight Style Electric Diffuser](/products/candlelight-style-electric-diffuser) | Aroma Diffuser | Diffusers | single | 13 | 5 |
 | 5 | `JL-DIF-BIRD-BLK` | [Bird Diffuser](/products/bird-diffuser) | Aroma Diffuser | Diffusers | Black / Amber | 14 | 6 |
 | 6 | `JL-HUM-H2O-BLK` | [H2O LED Humidifier](/products/h2o-led-humidifier) | Humidifier | Diffusers | Black / White / Pink | 15 | 8 |
 | 7 | `JL-DIF-RAINDROP` | [Raindrop Aroma Diffuser](/products/raindrop-aroma-diffuser) | Aroma Diffuser | Diffusers | single | 16 | 3 |
 
-Three products carry genuine colour variants taken from the catalogue
-photography: **Wood Grain Aroma Diffuser** (Walnut / Oak), **Bird Diffuser**
-(Black / Amber) and **H2O LED Humidifier** (Black / White / Pink). Selecting a
-variant swaps the gallery image. No other product was given invented variants.
+Three products carry variants: **Wood Grain Aroma Diffuser**
+(Walnut / Oak / Walnut & Oak), **Bird Diffuser** (Black / Amber) and
+**H2O LED Humidifier** (Black / White / Pink). Each variant has its own
+photography, and selecting one rebuilds the gallery around it in place.
+
+> **`JL-DIF-WOOD-SET` needs its own price.** The Walnut & Oak option is a
+> two-unit set and a separate SKU in Shopify, not a calculated discount on the
+> two singles — so it will not inherit a price from them.
 
 ---
 

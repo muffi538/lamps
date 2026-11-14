@@ -35,12 +35,13 @@ export type ImageDetail = {
   alt?: string;
   caption?: string;
   /**
-   * The option value this image belongs to, e.g. "Oak" or "Black". Images
-   * carrying a variant are shown only while that variant is selected; images
-   * without one (a shot of both finishes, say) are always shown. Must match an
-   * option value exactly — the build fails otherwise.
+   * The option value(s) this image belongs to, e.g. "Oak", or
+   * ["Oak", "Walnut & Oak"] for a frame that suits more than one. Images
+   * carrying a variant are shown only while one of those values is selected;
+   * images without one are always shown. Each value must match an option
+   * value exactly — the build fails otherwise.
    */
-  variant?: string;
+  variant?: string | string[];
 };
 
 /** A gallery image, resolved from the product's own folder. */
@@ -54,8 +55,8 @@ export type ProductImage = {
   /** Tiny inline placeholder so the frame never flashes empty. */
   blurDataURL: string;
   role: ImageRole;
-  /** Option value this image is scoped to, if any. */
-  variant?: string;
+  /** Option value(s) this image is scoped to, if any. */
+  variant?: string | string[];
 };
 
 export type Feature = { title: string; body: string };
