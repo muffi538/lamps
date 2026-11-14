@@ -1,0 +1,120 @@
+import type { ImageRole } from './product-images.generated';
+
+export type { ImageRole };
+
+export type Spec = {
+  label: string;
+  /** `null` means "not stated in the source catalogue" — rendered as a visible placeholder. */
+  value: string | null;
+};
+
+export type ProductOption = {
+  name: string;
+  values: string[];
+};
+
+export type ProductVariant = {
+  id: string;
+  /** Merchant SKU. Provisional until Shopify is connected. */
+  sku: string;
+  title: string;
+  selectedOptions: { name: string; value: string }[];
+  availableForSale: boolean;
+  /** `null` until pricing is supplied. */
+  price: number | null;
+  /** Index into `Product.images` so picking a colour swaps the gallery. */
+  imageIndex?: number;
+};
+
+/**
+ * Hand-written copy for one image, keyed in `ProductInput.imageDetails` by the
+ * filename without its extension (e.g. "03-detail-control"). Everything is
+ * optional — anything omitted falls back to the filename.
+ */
+export type ImageDetail = {
+  alt?: string;
+  caption?: string;
+  /**
+   * The option value(s) this image belongs to, e.g. "Oak", or
+   * ["Oak", "Walnut & Oak"] for a frame that suits more than one. Images
+   * carrying a variant are shown only while one of those values is selected;
+   * images without one are always shown. Each value must match an option
+   * value exactly — the build fails otherwise.
+   */
+  variant?: string | string[];
+};
+
+/** A gallery image, resolved from the product's own folder. */
+export type ProductImage = {
+  src: string;
+  alt: string;
+  /** Short caption shown under the gallery on the product page. */
+  caption?: string;
+  width: number;
+  height: number;
+  /** Tiny inline placeholder so the frame never flashes empty. */
+  blurDataURL: string;
+  role: ImageRole;
+  /** Option value(s) this image is scoped to, if any. */
+  variant?: string | string[];
+};
+
+export type Feature = { title: string; body: string };
+
+export type CollectionHandle = 'diffusers';
+
+export type Product = {
+  handle: string;
+  title: string;
+  /** One-line editorial introduction used on cards and at the top of the PDP. */
+  subtitle: string;
+  /** Verbatim positioning line from the supplied catalogue page. */
+  catalogueTagline: string | null;
+  productType: 'Aroma Diffuser' | 'Humidifier';
+  collections: CollectionHandle[];
+  /** Page of the supplied PDF this SKU was extracted from. */
+  sourcePage: number;
+  price: number | null;
+  compareAtPrice?: number | null;
+  description: string[];
+  features: Feature[];
+  /** Technical specifications. */
+  specs: Spec[];
+  dimensions: Spec[];
+  materials: Spec[];
+  inTheBox: (string | null)[];
+  usage: string[];
+  care: string[];
+  options: ProductOption[];
+  variants: ProductVariant[];
+  images: ProductImage[];
+  related: string[];
+  featured?: boolean;
+  bestseller?: boolean;
+};
+
+/**
+ * The shape authored in src/lib/catalog/*.ts.
+ *
+ * Products do not list their images. The gallery is built from the contents of
+ * public/products/<handle>/, so adding a product is: create the folder, drop in
+ * correctly named images, add this record. `imageDetails` is an optional
+ * overlay for alt text and captions.
+ */
+export type ProductInput = Omit<Product, 'images'> & {
+  imageDetails?: Record<string, ImageDetail>;
+};
+
+export type Collection = {
+  handle: CollectionHandle;
+  title: string;
+  /** Short line used in nav and card overlays. */
+  strapline: string;
+  description: string;
+  /** 4:5 portrait tile used on the homepage. */
+  image: string;
+  imageAlt: string;
+  /** Wide banner used at the top of the collection page. */
+  heroImage: string;
+  heroImageAlt: string;
+};

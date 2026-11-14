@@ -1,0 +1,59 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Collection } from '@/lib/catalog/types';
+import { cn } from '@/lib/utils';
+import { ArrowIcon } from './Icons';
+
+export function CollectionTile({
+  collection,
+  count,
+  priority = false,
+  image,
+  wide = false,
+}: {
+  collection: Collection;
+  count: number;
+  priority?: boolean;
+  image?: string;
+  /** Full-bleed banner proportions, for when a single collection is shown. */
+  wide?: boolean;
+}) {
+  return (
+    <Link
+      href={`/collections/${collection.handle}`}
+      className="group relative block"
+      aria-label={`${collection.title} — ${count} pieces`}
+    >
+      <div className={cn('media-frame aspect-[4/5] w-full', wide ? 'md:aspect-[16/7]' : 'md:aspect-[3/4]')}>
+        <Image
+          src={image ?? collection.image}
+          alt={collection.imageAlt}
+          fill
+          priority={priority}
+          sizes={wide ? '100vw' : '(min-width:768px) 48vw, 92vw'}
+          className="object-cover transition-transform duration-[1200ms] ease-premium group-hover:scale-[1.035]"
+        />
+        <div
+          className={cn(
+            'absolute inset-0 transition-opacity duration-700 group-hover:opacity-100',
+            wide
+              ? 'bg-gradient-to-r from-ink/70 via-ink/25 to-transparent opacity-90 md:from-ink/65 md:via-ink/20'
+              : 'bg-gradient-to-t from-ink/55 via-ink/5 to-transparent opacity-80',
+          )}
+          aria-hidden="true"
+        />
+
+        <div className="absolute inset-x-0 bottom-0 p-7 md:p-10">
+          <p className="font-ui text-2xs uppercase tracking-widest2 text-white/70">{collection.strapline}</p>
+          <h3 className="mt-3 font-sans text-2xl font-light tracking-[-0.02em] text-white md:text-3xl">
+            {collection.title}
+          </h3>
+          <span className="mt-5 inline-flex items-center gap-2 font-ui text-2xs uppercase tracking-wider2 text-white">
+            <span className="link-underline">Explore {count} pieces</span>
+            <ArrowIcon className="h-3 w-3 transition-transform duration-500 ease-premium group-hover:translate-x-1" />
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
