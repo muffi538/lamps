@@ -178,7 +178,7 @@ export const diffusers: ProductInput[] = [
     description: [
       'Some objects earn their place by disappearing into a room. The Wood Grain Aroma Diffuser is one of them: an almost-spherical body with a lifted dome lid, finished in a natural wood grain that sits comfortably on a console, a bedside or a bathroom shelf.',
       'A single illuminated power symbol is the only interruption on the surface. Press it and a narrow plume of cool, scented mist lifts from the opening at the crown.',
-      'It is offered in two finishes: a deep Walnut and a pale Oak. Both are photographed in the supplied catalogue, and both carry the same four promises — a natural wood finish, calming mist, a relaxing and refreshing atmosphere, and a piece that works as a gift.',
+      'It is offered in two finishes — a deep Walnut and a pale Oak — or as a pair, which is the way most people end up buying it: one for the bedroom and one for the desk. All three carry the same four promises: a natural wood finish, calming mist, a relaxing and refreshing atmosphere, and a piece that works as a gift.',
     ],
     features: [
       { title: 'Natural wood finish', body: 'A wood-grain surface in two tones, Walnut and Oak.' },
@@ -189,7 +189,7 @@ export const diffusers: ProductInput[] = [
     ],
     specs: [
       { label: 'Diffuser type', value: 'Ultrasonic aroma diffuser' },
-      { label: 'Finish options', value: 'Walnut (dark) and Oak (light)' },
+      { label: 'Finish options', value: 'Walnut (dark), Oak (light), or both as a two-unit set' },
       { label: 'Controls', value: 'Single illuminated power button' },
       { label: 'Tank capacity', value: null },
       { label: 'Mist output', value: null },
@@ -224,25 +224,28 @@ export const diffusers: ProductInput[] = [
       'Clean the atomising disc weekly with a cotton bud and diluted white vinegar.',
       'Do not use alcohol-based or abrasive cleaners on the finish.',
     ],
-    options: [{ name: 'Finish', values: ['Walnut', 'Oak'] }],
+    options: [{ name: 'Finish', values: ['Walnut', 'Oak', 'Walnut & Oak'] }],
     variants: [
       // Each finish has its own photography, scoped in imageDetails above, so
       // the gallery rebuilds around the chosen finish rather than jumping to an
       // index. No imageIndex needed.
       { id: 'wood-grain-walnut', sku: 'JL-DIF-WOOD-WAL', title: 'Walnut', selectedOptions: [{ name: 'Finish', value: 'Walnut' }], availableForSale: true, price: null },
       { id: 'wood-grain-oak', sku: 'JL-DIF-WOOD-OAK', title: 'Oak', selectedOptions: [{ name: 'Finish', value: 'Oak' }], availableForSale: true, price: null },
+      // A two-unit set. Needs its own price — it is a separate SKU in Shopify,
+      // not a calculated discount on the two singles.
+      { id: 'wood-grain-set', sku: 'JL-DIF-WOOD-SET', title: 'Walnut & Oak', selectedOptions: [{ name: 'Finish', value: 'Walnut & Oak' }], availableForSale: true, price: null },
     ],
     imageDetails: {
-      // No variant key: shown whichever finish is selected.
-      "01-main": { alt: "Walnut and Oak Wood Grain Aroma Diffusers side by side on a wooden table, both releasing mist", caption: "Both finishes" },
-      "02-colour-walnut": { variant: 'Walnut', alt: "Walnut Wood Grain Aroma Diffuser releasing a fine mist plume", caption: "Walnut" },
+      "01-main": { variant: 'Walnut & Oak', alt: "Walnut and Oak Wood Grain Aroma Diffusers side by side on a wooden table, both releasing mist", caption: "Both finishes" },
+      "02-colour-walnut": { variant: ['Walnut', 'Walnut & Oak'], alt: "Walnut Wood Grain Aroma Diffuser releasing a fine mist plume", caption: "Walnut" },
       "03-lifestyle-interior": { variant: 'Walnut', alt: "Walnut Wood Grain Aroma Diffuser on a table in a warm interior with a window behind", caption: "In a room" },
       "04-lifestyle-mist": { variant: 'Walnut', alt: "Close view of the Walnut Wood Grain Aroma Diffuser with mist rising from the crown", caption: "Mist detail" },
       "05-detail-base": { variant: 'Walnut', alt: "Underside of the Walnut Wood Grain Aroma Diffuser showing the ventilation grille and USB-C port", caption: "Underside" },
-      "06-colour-oak": { variant: 'Oak', alt: "Oak Wood Grain Aroma Diffuser releasing a fine mist plume", caption: "Oak" },
-      "07-angle-oak": { variant: 'Oak', alt: "Oak Wood Grain Aroma Diffuser with the dome lid raised, seen from the front", caption: "Lid raised" },
-      "08-detail-oak-mist": { variant: 'Oak', alt: "Close view of the Oak Wood Grain Aroma Diffuser crown with mist rising from the opening", caption: "Mist detail" },
-      "09-detail-oak-base": { variant: 'Oak', alt: "Underside of the Oak Wood Grain Aroma Diffuser showing the ventilation grille and USB-C port", caption: "Underside" },
+      "06-colour-oak": { variant: ['Oak', 'Walnut & Oak'], alt: "Oak Wood Grain Aroma Diffuser releasing mist on a bedside table beside a lamp and a plant", caption: "Bedside" },
+      "07-lifestyle-oak-marble": { variant: 'Oak', alt: "Oak Wood Grain Aroma Diffuser on a marble surface beside a mushroom lamp", caption: "On marble" },
+      "08-detail-oak-control": { variant: 'Oak', alt: "Macro detail of the illuminated power symbol and the lifted dome lid", caption: "Power control" },
+      "09-detail-oak-top": { variant: 'Oak', alt: "The Oak diffuser from directly above, showing the mist opening in the crown", caption: "From above" },
+      "10-angle-oak-studio": { variant: 'Oak', alt: "Oak Wood Grain Aroma Diffuser on a plain background with a fine mist plume", caption: "Oak" },
     },
     related: ['h2o-led-humidifier', 'bird-diffuser', 'jellyfish-aroma-diffuser'],
   },

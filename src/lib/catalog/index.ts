@@ -16,9 +16,10 @@ function withImages(input: ProductInput): Product {
   const images = resolveProductImages(input.handle, input.title, imageDetails);
 
   const optionValues = new Set(input.options.flatMap((o) => o.values));
-  const unknown = images
-    .filter((i) => i.variant && !optionValues.has(i.variant))
-    .map((i) => `${i.src} -> "${i.variant}"`);
+  const unknown = images.flatMap((i) => {
+    const scoped = i.variant === undefined ? [] : Array.isArray(i.variant) ? i.variant : [i.variant];
+    return scoped.filter((v) => !optionValues.has(v)).map((v) => `${i.src} -> "${v}"`);
+  });
   if (unknown.length) {
     throw new Error(
       `"${input.handle}" scopes images to option values that do not exist:\n  ${unknown.join('\n  ')}\n` +

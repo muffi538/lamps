@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import type { Product, ProductVariant } from '@/lib/catalog/types';
+import type { Product, ProductImage, ProductVariant } from '@/lib/catalog/types';
 import { Gallery } from './Gallery';
 import { QuantityStepper } from './QuantityStepper';
 import { Accordion } from './Accordion';
@@ -36,19 +36,29 @@ export function ProductTop({ product }: { product: Product }) {
    * frames — so choosing Oak swaps the gallery to the Oak shots in place,
    * rather than sending the customer to a different page.
    */
+  const allImages = product.images;
   const galleryImages = useMemo(() => {
     const chosen = new Set(Object.values(selected));
-    const scoped = product.images.filter((i) => i.variant && chosen.has(i.variant));
-    if (!scoped.length) return product.images;
-    return [...scoped, ...product.images.filter((i) => !i.variant)];
-  }, [product.images, selected]);
+    const belongsToChoice = (image: ProductImage) => {
+      if (image.variant === undefined) return false;
+      const values = Array.isArray(image.variant) ? image.variant : [image.variant];
+      return values.some((v) => chosen.has(v));
+    };
+    const scoped = allImages.filter(belongsToChoice);
+    if (!scoped.length) return allImages;
+    return [...scoped, ...allImages.filter((i) => i.variant === undefined)];
+  }, [allImages, selected]);
 
   function chooseOption(name: string, value: string) {
     const next = { ...selected, [name]: value };
     setSelected(next);
 
     const chosen = new Set(Object.values(next));
-    const hasScopedImages = product.images.some((i) => i.variant && chosen.has(i.variant));
+    const hasScopedImages = product.images.some((i) => {
+      if (i.variant === undefined) return false;
+      const values = Array.isArray(i.variant) ? i.variant : [i.variant];
+      return values.some((v) => chosen.has(v));
+    });
     if (hasScopedImages) {
       // The gallery is about to be rebuilt around this variant.
       setImageIndex(0);
